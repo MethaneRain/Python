@@ -93,3 +93,46 @@ The new variable should have a similar DataSet with Dimensions and <b><i>vert_le
 ~~~Python
 PV                          (time, vert_levels, lat, lon) float32 ...
 ~~~
+# Make a new variable:
+
+~~~Python
+vert_levs = np.arange(19000,22000,1)
+~~~
+
+If you wanted to add a new dimension to all variables already in the data set. This isn't exactly what we want, so we'll ignore it...
+~~~Python
+data_newcoord = data.assign_coords(vert_levs=vert_levs)
+data = data_newcoord.expand_dims('vert_levels')
+print(data)
+~~~
+~~~Python
+>>>
+
+~~~
+
+Now let's make a variable to add to the gfs_data array:
+* To test, we'll grab the values of 2e-06 for one vertical level:
+~~~Python
+%%time
+
+data2 = data["Geopotential_height_potential_vorticity_surface"][:,1,:,:].squeeze()
+print(data2.shape)
+data2 = np.zeros((len(time.values),len(vert_levs),len(data['lat']),len(data['lon'])))
+data2.shape
+
+for m in range(0,1):
+    for l in range(lat_start_index[0][0],lat_end_index[0][0]-15+1):
+        for k in range(lon_start_index[0][0],lon_end_index[0][0]-30+1):
+            for j in range(0,1,1):
+                if vert_levs[j] == data["Geopotential_height_potential_vorticity_surface"][m,1,l,k].values.astype(int):
+                    print("ahh:",vert_levs[j],m,l,k)
+                    data2[m,1,l,k] = 2e-06
+
+~~~
+
+
+~~~Python
+AHHA = xr.DataArray(data2, coords=[time.values,vert_levs, data['lat'],data['lon']],
+             dims=['time',"vert_levs",'lat','lon'])
+
+~~~
