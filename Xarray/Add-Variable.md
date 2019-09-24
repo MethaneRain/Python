@@ -88,7 +88,7 @@ Thus in similar fashion to the RH variable with <b><i>isobaric</i></b> being the
 Relative_humidity_isobaric                          (time, isobaric, lat, lon) float32 ...
 ~~~
 
-The new variable should have a similar DataSet with Dimensions and <b><i>vert_levles</i></b> are the vertical levels
+The new variable should have a similar DataSet with Dimensions and <b><i>vert_levels</i></b> are the vertical levels
 
 ~~~Python
 PV                          (time, vert_levels, lat, lon) float32 ...
