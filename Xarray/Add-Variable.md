@@ -18,7 +18,8 @@ data = data.metpy.parse_cf().squeeze()
 #type(data)
 data
 
->>><xarray.Dataset>
+>>>
+<xarray.Dataset>
 Dimensions:                                             (height_above_ground1: 2, height_above_ground3: 7, height_above_ground4: 3, isobaric: 31, isobaric1: 29, isobaric4: 34, isobaric5: 22, isobaric6: 21, lat: 161, lon: 321, potential_vorticity_surface: 2, time: 7)
 Coordinates:
   * time                                                (time) datetime64[ns] 2019-09-10T03:00:00 ... 2019-09-10T21:00:00
@@ -77,3 +78,16 @@ Data variables:
     v-component_of_wind_potential_vorticity_surface     (time, potential_vorticity_surface, lat, lon) float32 ...
 
  ~~~
+
+ The variable we want to add would be a an array of PV values of 2e-06 and have the heights be our new vertical level data
+
+Thus in similar fashion to the RH variable with <i>isobaric</i> being the vertical levels
+~~~Python
+Relative_humidity_isobaric                          (time, isobaric, lat, lon) float32 ...
+~~~
+
+The new variable should have a similar DataSet with Dimensions and <i>vert_levles</i> are the vertical levels
+
+~~~Python
+PV                          (time, vert_levels, lat, lon) float32 ...
+~~~
