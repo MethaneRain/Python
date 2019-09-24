@@ -4,7 +4,3 @@ Since it was designed for working with data, the built-in functions of this pack
 
 
 Since it is build for working with data, the built-in functions of this package are very powerful!
-
-~~~Python
-data = np.sin(0)
-~~~
