@@ -1,0 +1,1 @@
+My attempt at "making" maps, really just me being able to access images from the various weather agency's websites. I was able to learn how to pull in raw netCDF data for 24-hour precip and plot that!
