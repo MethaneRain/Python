@@ -1,16 +1,12 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
 
 def plot_maxmin_points(Ax,lon, lat, data, extrema, nsize, symbol,color='k',
                        plotValue=True, transform=None):
 
     """
-    I have added some path effects on the symbols and pressure readings - outlining them in black 
+    Some path effects on the symbols and pressure readings have been added - outlining them in black 
     to make them pop a bit more.
     
+    An Ax argument has also been added to call the current axes to plot on - mainly used if importing this from an external folder
     
     This function will find and plot relative maximum and minimum for a 2D grid. The function
     can be used to plot an H for maximum values (e.g., High pressure) and an L for minimum
