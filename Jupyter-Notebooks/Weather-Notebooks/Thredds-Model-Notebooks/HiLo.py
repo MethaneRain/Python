@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
 
 def plot_maxmin_points(Ax,lon, lat, data, extrema, nsize, symbol, model,color='k',
                        plotValue=True, transform=None):
@@ -104,7 +99,4 @@ def plot_maxmin_points(Ax,lon, lat, data, extrema, nsize, symbol, model,color='k
                     color=color, size=12, clip_on=True, fontweight='bold',
                     horizontalalignment='center', verticalalignment='top', transform=transform)
             B.set_path_effects(outline_effect)
-
-
-    
-
+            
