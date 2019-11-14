@@ -12,3 +12,8 @@ Labels need not be unique but must be a hashable type. <b>The object supports bo
 ~~~Python
 
 ~~~
+
+---
+
+Pandas Meteogram Example:
+* https://github.com/MethaneRain/Python-Jupyter/blob/master/Pandas/Panda_Meteogram_Example.ipynb
