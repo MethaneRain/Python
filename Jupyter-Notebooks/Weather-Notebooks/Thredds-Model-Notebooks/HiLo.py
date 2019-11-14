@@ -1,5 +1,5 @@
 
-def plot_maxmin_points(Ax,lon, lat, data, extrema, nsize, symbol,color='k',
+def plot_maxmin_points(ax,lon, lat, data, extrema, nsize, symbol,color='k',
                        plotValue=True, transform=None):
 
     """
@@ -40,11 +40,11 @@ def plot_maxmin_points(Ax,lon, lat, data, extrema, nsize, symbol,color='k',
     #print(mxy,mxx)
     
     for i in range(len(mxy)):
-        A = Ax.text(lon[mxy[i], mxx[i]], lat[mxy[i], mxx[i]], symbol, color=color, size=24,
+        A = ax.text(lon[mxy[i], mxx[i]], lat[mxy[i], mxx[i]], symbol, color=color, size=24,
                     clip_on=True, horizontalalignment='center', verticalalignment='center',
                     transform=transform)
         A.set_path_effects(outline_effect)
-        B = Ax.text(lon[mxy[i], mxx[i]], lat[mxy[i], mxx[i]]-0.66,
+        B = ax.text(lon[mxy[i], mxx[i]], lat[mxy[i], mxx[i]]-0.66,
                     str(np.int(data[mxy[i], mxx[i]])),
                     color=color, size=12, clip_on=True, fontweight='bold',
                     horizontalalignment='center', verticalalignment='top', transform=transform)
