@@ -1,12 +1,8 @@
 Collection of preset 48 hour forecast period notebooks based off current day 00Z initialization hour
 
 ---
-<font color = "blue" size="28">PV and Upward Irradiance Flux (with MSLP and 500mb Height options)</font>
-<html>
-          <head>
-            <title><font color = "blue" size="28">PV and Upward Irradiance Flux (with MSLP and 500mb Height options)</font>
-<html></title>
-          </head>
+<strong><em>PV and Upward Irradiance Flux (with MSLP and 500mb Height options)</em>
+</strong>
 
 * I want to continue to change my plotting functions, albeit they are archaic and nowhere close to a permanent solution to having flexible plotting options for the users.
 
