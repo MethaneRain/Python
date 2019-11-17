@@ -3,8 +3,8 @@ Documentation related to working with GFS data through THREDDS Server
 <img src="https://raw.githubusercontent.com/MethaneRain/Python-Jupyter/master/Jupyter-Notebooks/Weather-Notebooks/Thredds-Model-Notebooks/GFS/TREDDS_GFS_List.png">
 
 <figure>
-  <img src="https://raw.githubusercontent.com/MethaneRain/Python-Jupyter/master/Jupyter-Notebooks/Weather-Notebooks/Thredds-Model-Notebooks/GFS/TREDDS_GFS_List.png" alt=" style="width:100%" title="GFS Section of THREDDS Model Data">
-  <figcaption>GFS Section of Thredds</figcaption>
+  <img src="GFS Section of Thredds" alt=" style="width:100%" title="GFS Section of THREDDS Model Data">
+  <figcaption>source: https://thredds-test.unidata.ucar.edu/thredds/catalog/idd/forecastModels.html</figcaption>
 </figure>
 
 ---
