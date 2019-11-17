@@ -1,1 +1,1 @@
-I have been working on my own notebooks that are singel variable (or small set groups of variables) for an ultipmate project I'm trying out. In this project I am trying to make a GUI to plot my Python variables
+Collection of preset 48 hour forecast period notebooks based off current day 00Z initialization hour
