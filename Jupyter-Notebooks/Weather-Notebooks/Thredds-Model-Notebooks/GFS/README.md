@@ -2,6 +2,13 @@ Documentation related to working with GFS data through THREDDS Server
 
 <img src="https://raw.githubusercontent.com/MethaneRain/Python-Jupyter/master/Jupyter-Notebooks/Weather-Notebooks/Thredds-Model-Notebooks/GFS/TREDDS_GFS_List.png">
 
+<figure>
+  <img src="https://raw.githubusercontent.com/MethaneRain/Python-Jupyter/master/Jupyter-Notebooks/Weather-Notebooks/Thredds-Model-Notebooks/GFS/TREDDS_GFS_List.png" alt=" style="width:100%" title="GFS Section of THREDDS Model Data">
+  <figcaption>GFS Section of Thredds</figcaption>
+</figure>
+
+---
+
 GFS has many sectors that are availabe in THREDDS:
 * 0.25 Deg Forecast and Analysis - Global
 * 0.5 Deg Forecast and Analysis - Global
