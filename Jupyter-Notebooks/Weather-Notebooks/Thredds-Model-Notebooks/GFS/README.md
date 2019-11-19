@@ -15,5 +15,5 @@ GFS has many sectors that are availabe in THREDDS:
 * Pacific 20km
 * 0.25 Deg Puerto Rico
 * CONUS 80km
-* CONUS 20km
+* [CONUS 20km](https://github.com/MethaneRain/Python-Jupyter/tree/master/Jupyter-Notebooks/Weather-Notebooks/Thredds-Model-Notebooks/GFS/20km-CONUS)
 * Alaska 20km
