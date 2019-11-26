@@ -1,22 +1,19 @@
 Plotting in Jupyter Notebook has so many options, there are some really cool advanced plotting options available recently.
 ---
 
-<em>Holoview</em>
+<em>Holoview</em> - https://holoviews.org/index.html
 ---
-* https://holoviews.org/index.html
 
-<em>Hvplot</em>
+<em>Hvplot</em> - * https://hvplot.pyviz.org/index.html
 ---
-* https://hvplot.pyviz.org/index.html
 <ol>
 <li>https://hvplot.pyviz.org/user_guide/Geographic_Data.html</li>
 </ol>
 
-<em>Bokeh</em>
+<em>Bokeh</em> - https://docs.bokeh.org/en/latest/
 ---
-* https://docs.bokeh.org/en/latest/
 
-<em>Geoviews</em>
+<em>Geoviews</em> - http://geoviews.org/index.html
 ---
 * http://geoviews.org/Geometries.html
 <ol>
