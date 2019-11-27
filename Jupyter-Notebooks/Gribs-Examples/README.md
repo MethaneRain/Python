@@ -6,7 +6,7 @@ I had to create a separate ```env``` for working with ```pygrib```, my libraries
 
 In the terminal:
 
-$ conda create test-pygrib python=3.7
+$ conda create -n test-pygrib python=3.7
 
 You must install all your Python libraries again since this is a blank slate environment
 
