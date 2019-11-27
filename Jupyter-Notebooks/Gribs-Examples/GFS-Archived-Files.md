@@ -35,22 +35,20 @@ There are so many variables, we can just print out a couple to see the data in r
 
 ```python
 grb[0:10]
+>>>
+[1:Cloud mixing ratio:kg kg**-1 (instant):regular_ll:hybrid:level 1:fcst time 3 hrs:from 201911150000,
+ 2:Ice water mixing ratio:kg kg**-1 (instant):regular_ll:hybrid:level 1:fcst time 3 hrs:from 201911150000,
+ 3:Rain mixing ratio:kg kg**-1 (instant):regular_ll:hybrid:level 1:fcst time 3 hrs:from 201911150000,
+ 4:Snow mixing ratio:kg kg**-1 (instant):regular_ll:hybrid:level 1:fcst time 3 hrs:from 201911150000,
+ 5:Graupel (snow pellets):kg kg**-1 (instant):regular_ll:hybrid:level 1:fcst time 3 hrs:from 201911150000,
+ 6:Maximum/Composite radar reflectivity:dB (instant):regular_ll:atmosphere:level 0 -:fcst time 3 hrs:from 201911150000,
+ 7:Visibility:m (instant):regular_ll:surface:level 0:fcst time 3 hrs:from 201911150000,
+ 8:U component of wind:m s**-1 (instant):regular_ll:unknown:level 0:fcst time 3 hrs:from 201911150000,
+ 9:V component of wind:m s**-1 (instant):regular_ll:unknown:level 0:fcst time 3 hrs:from 201911150000,
+ 10:Ventilation Rate:m**2 s**-1 (instant):regular_ll:unknown:level 0:fcst time 3 hrs:from 201911150000]
+>>>
 ```
 
-```python
->>>
-[1:Cloud mixing ratio:kg kg**-1 (instant):regular_ll:hybrid:level 1:fcst time 0 hrs:from 201911150000,
- 2:Ice water mixing ratio:kg kg**-1 (instant):regular_ll:hybrid:level 1:fcst time 0 hrs:from 201911150000,
- 3:Rain mixing ratio:kg kg**-1 (instant):regular_ll:hybrid:level 1:fcst time 0 hrs:from 201911150000,
- 4:Snow mixing ratio:kg kg**-1 (instant):regular_ll:hybrid:level 1:fcst time 0 hrs:from 201911150000,
- 5:Graupel (snow pellets):kg kg**-1 (instant):regular_ll:hybrid:level 1:fcst time 0 hrs:from 201911150000,
- 6:Maximum/Composite radar reflectivity:dB (instant):regular_ll:atmosphere:level 0 -:fcst time 0 hrs:from 201911150000,
- 7:Visibility:m (instant):regular_ll:surface:level 0:fcst time 0 hrs:from 201911150000,
- 8:U component of wind:m s**-1 (instant):regular_ll:unknown:level 0:fcst time 0 hrs:from 201911150000,
- 9:V component of wind:m s**-1 (instant):regular_ll:unknown:level 0:fcst time 0 hrs:from 201911150000,
- 10:Ventilation Rate:m**2 s**-1 (instant):regular_ll:unknown:level 0:fcst time 0 hrs:from 201911150000
->>>
-```
 
 
 
@@ -61,7 +59,46 @@ There are several ways to access data, lets take a look a some:
 
 #### Simplest Method
 
+pygrib's ```.select(kwargs)``` is a sudo search function. If you know the exact long name of the variable in the dataset, you can call the ```name``` function.
 
+ex:
+```Python
+.select(name="MSLP")
+
+>>>
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-20-ec68fde650b7> in <module>
+----> 1 grbs.select(name="MSLP")
+
+pygrib.pyx in pygrib.open.select()
+
+ValueError: no matches found
+>>>
+```
+
+But knowing the GFS Forecast 1/2 or Full degress grib files:
+```Python
+.select(name="MSLP (Eta model reduction)")
+
+>>>
+[419:MSLP (Eta model reduction):Pa (instant):regular_ll:meanSea:level 0:fcst time 3 hrs:from 201911150000]
+>>>
+
+```Python
+type(grbs.select(name="MSLP (Eta model reduction)"))
+>>>
+list
+>>>
+```
+
+So the select function will return a list based off the kwagrs
+
+
+
+
+
+---
 In your notebook:
 ```python
 import pygrib
