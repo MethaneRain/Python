@@ -22,17 +22,19 @@ GFS Analysis and Forecast:
 * https://www.ncdc.noaa.gov/data-access/model-data/model-datasets/global-forcast-system-gfs
 
 ---
-python```
+```grbs``` is the instance of the file and datacrs
+```grb``` will read the data line by line
+
 grbs = pygrib.open(_grib_file_)
-grb = grbs.read
+grb = grbs.read()
 ```
 There are so many variables, we can just print out a couple to see the data in raw form
 
-python```
+```
 grb[0:10]
 ```
 
-python```
+```
 >>>
 [1:Cloud mixing ratio:kg kg**-1 (instant):regular_ll:hybrid:level 1:fcst time 0 hrs:from 201911150000,
  2:Ice water mixing ratio:kg kg**-1 (instant):regular_ll:hybrid:level 1:fcst time 0 hrs:from 201911150000,
