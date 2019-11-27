@@ -2,7 +2,7 @@
 
 ## This can be very helpful as a lot of model data and other weather data are in this file type
 
-I had to create a separate ```env``` for working with ```pygrib```, my libraries weren't playing nicely otherwise. 
+I had to create a separate ```env``` for working with ```pygrib```, my libraries weren't playing nicely otherwise.
 
 In the terminal:
 
