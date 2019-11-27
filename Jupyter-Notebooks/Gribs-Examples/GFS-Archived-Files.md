@@ -112,7 +112,14 @@ grbs.select(name="Absolute vorticity",level=500)[0] # [0]to grab it out of the r
 
 ---
 
-Now that we can grab a specific variables values, lats, and lons based off kwargs and/or heights
+Now that we can grab a specific variables values, lats, and lons based off kwargs and/or heights more info can be accessed for each variable.
+
+The lat/lons can be taken from the data as 2d arrays each
+```Python
+
+
+lat,lon = meta_time.latlons()
+```
 
 
 '\n'
