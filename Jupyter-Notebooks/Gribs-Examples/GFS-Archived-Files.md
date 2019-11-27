@@ -158,13 +158,15 @@ array([[5221.7383, 5221.7383, 5221.7383, ..., 5221.7383, 5221.7383,
         5093.4985]], dtype=float32)
 >>>
 ```
-Pygrib also allows for spatial subsetting with lat1, lat2, lon1, lon2 calls
+Pygrib also allows for spatial subsetting with ```lat1, lat2, lon1, lon2``` calls
 ```Python
 hgt_500 = grbs.select(name="Geopotential Height",level=500)[0].data(lat1=20,lat2=70,lon1=220,lon2=320)
 ```
 
 
-'\n'
+.
+.
+.
 
 ---
 In your notebook:
