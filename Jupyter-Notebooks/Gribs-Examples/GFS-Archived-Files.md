@@ -22,9 +22,17 @@ GFS Analysis and Forecast:
 * https://www.ncdc.noaa.gov/data-access/model-data/model-datasets/global-forcast-system-gfs
 
 ---
+```Python
+grbs
+```
+will be the new instance of the data and file and
+```Python
+grb```
+will be the lines of the file read in
+
 ```python
 grbs = pygrib.open(_grib_file_)
-grb = grbs.read
+grb = grbs.read()
 ```
 There are so many variables, we can just print out a couple to see the data in raw form
 
