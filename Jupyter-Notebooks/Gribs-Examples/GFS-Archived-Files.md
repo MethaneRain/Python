@@ -17,11 +17,40 @@ $ conda activate test-pygrib
 GFS Analysis and Forecast:
 * Some days are missing...
 
-* Roughly 10 days behind current date 
+* Roughly 10 days behind current date
 
 * https://www.ncdc.noaa.gov/data-access/model-data/model-datasets/global-forcast-system-gfs
 
 ---
+Python```
+grbs = pygrib.open(_grib_file_)
+grb = grbs.read
+```
+There are so many variables, we can just print out a couple to see the data in raw form
+
+Python```
+grb[0:10]
+```
+
+Python```
+>>>
+[1:Cloud mixing ratio:kg kg**-1 (instant):regular_ll:hybrid:level 1:fcst time 0 hrs:from 201911150000,
+ 2:Ice water mixing ratio:kg kg**-1 (instant):regular_ll:hybrid:level 1:fcst time 0 hrs:from 201911150000,
+ 3:Rain mixing ratio:kg kg**-1 (instant):regular_ll:hybrid:level 1:fcst time 0 hrs:from 201911150000,
+ 4:Snow mixing ratio:kg kg**-1 (instant):regular_ll:hybrid:level 1:fcst time 0 hrs:from 201911150000,
+ 5:Graupel (snow pellets):kg kg**-1 (instant):regular_ll:hybrid:level 1:fcst time 0 hrs:from 201911150000,
+ 6:Maximum/Composite radar reflectivity:dB (instant):regular_ll:atmosphere:level 0 -:fcst time 0 hrs:from 201911150000,
+ 7:Visibility:m (instant):regular_ll:surface:level 0:fcst time 0 hrs:from 201911150000,
+ 8:U component of wind:m s**-1 (instant):regular_ll:unknown:level 0:fcst time 0 hrs:from 201911150000,
+ 9:V component of wind:m s**-1 (instant):regular_ll:unknown:level 0:fcst time 0 hrs:from 201911150000,
+ 10:Ventilation Rate:m**2 s**-1 (instant):regular_ll:unknown:level 0:fcst time 0 hrs:from 201911150000
+>>>
+```
+
+
+
+---
+
 There are several ways to access data, lets take a look a some:
 ---
 
