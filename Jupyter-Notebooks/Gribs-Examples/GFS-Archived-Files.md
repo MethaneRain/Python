@@ -93,11 +93,24 @@ list
 >>>
 ```
 
-So the select function will return a list based off the kwagrs
+The level can also be a kwarg to search by:
+ex. ```Absolute vorticity:s**-1 (instant):regular_ll:isobaricInhPa:level 50000 Pa```
+!! The ```level``` kwarg is by hPa,  but the variable info has it in Pa !!
+```Python
+grbs.select(name="Absolute vorticity",level=500)[0] # [0]to grab it out of the returned list
+>>>
+230:Absolute vorticity:s**-1 (instant):regular_ll:isobaricInhPa:level 50000 Pa:fcst time 3 hrs:from 201911150000
+>>>
+```
 
 
+So the select function will return a list based off the kwargs
+---
+
+Now that we can grab a specific variables values, lats, and lons based off kwargs and/or heights
 
 
+'\n'
 
 ---
 In your notebook:
