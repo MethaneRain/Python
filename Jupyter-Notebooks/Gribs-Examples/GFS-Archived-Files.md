@@ -77,13 +77,14 @@ ValueError: no matches found
 >>>
 ```
 
-But knowing the GFS Forecast 1/2 or Full degress grib files:
+But knowing the GFS Forecast 1/2 or Full degrees grib files:
 ```Python
 .select(name="MSLP (Eta model reduction)")
 
 >>>
 [419:MSLP (Eta model reduction):Pa (instant):regular_ll:meanSea:level 0:fcst time 3 hrs:from 201911150000]
 >>>
+```
 
 ```Python
 type(grbs.select(name="MSLP (Eta model reduction)"))
