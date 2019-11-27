@@ -164,6 +164,6 @@ hgt_500 = grbs.select(name="Geopotential Height",level=500)[0].data(lat1=20,lat2
 ```
 
 
-.
-.
-.
+---
+Plot
+---
