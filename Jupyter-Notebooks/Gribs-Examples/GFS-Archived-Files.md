@@ -22,14 +22,10 @@ GFS Analysis and Forecast:
 * https://www.ncdc.noaa.gov/data-access/model-data/model-datasets/global-forcast-system-gfs
 
 ---
-```Python
-grbs
-```
-will be the new instance of the data and file and
-```Python
-grb
-```
-will be the lines of the file read in
+
+```grbs``` will be the new instance of the data and file and
+
+```grb``` will be the lines of the file read in
 
 ```python
 grbs = pygrib.open(_grib_file_)
