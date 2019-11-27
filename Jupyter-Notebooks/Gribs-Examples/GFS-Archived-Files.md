@@ -94,7 +94,9 @@ list
 ```
 
 The level can also be a kwarg to search by:
+
 ex. ```Absolute vorticity:s**-1 (instant):regular_ll:isobaricInhPa:level 50000 Pa```
+
 !! The ```level``` kwarg is by hPa,  but the variable info has it in Pa !!
 ```Python
 grbs.select(name="Absolute vorticity",level=500)[0] # [0]to grab it out of the returned list
