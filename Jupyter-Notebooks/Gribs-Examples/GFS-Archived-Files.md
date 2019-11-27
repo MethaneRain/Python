@@ -27,7 +27,8 @@ grbs
 ```
 will be the new instance of the data and file and
 ```Python
-grb```
+grb
+```
 will be the lines of the file read in
 
 ```python
