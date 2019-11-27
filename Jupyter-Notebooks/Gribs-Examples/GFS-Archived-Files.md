@@ -13,6 +13,7 @@ $ conda create -n test-pygrib python=3.7
 You must install all your Python libraries again since this is a blank slate environment
 
 $ conda activate test-pygrib
+
 ---
 GFS Analysis and Forecast:
 * Some days are missing...
@@ -93,11 +94,13 @@ list
 >>>
 ```
 
+So the select function will return a list based off the kwargs
+
 The level can also be a kwarg to search by:
 
 ex. ```Absolute vorticity:s**-1 (instant):regular_ll:isobaricInhPa:level 50000 Pa```
 
-!! The ```level``` kwarg is by hPa,  but the variable info has it in Pa !!
+!! The ```grbs.select(level)``` kwarg is by hPa,  but the variable info has it in Pa !!
 ```Python
 grbs.select(name="Absolute vorticity",level=500)[0] # [0]to grab it out of the returned list
 >>>
@@ -106,7 +109,7 @@ grbs.select(name="Absolute vorticity",level=500)[0] # [0]to grab it out of the r
 ```
 
 
-So the select function will return a list based off the kwargs
+
 ---
 
 Now that we can grab a specific variables values, lats, and lons based off kwargs and/or heights
