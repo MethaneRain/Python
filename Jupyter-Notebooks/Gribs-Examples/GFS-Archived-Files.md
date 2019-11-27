@@ -112,7 +112,7 @@ grbs.select(name="Absolute vorticity",level=500)[0] # [0]to grab it out of the r
 
 ---
 
-Now that we can grab a specific variables values, lats, and lons based off kwargs and/or heights more info can be accessed for each variable.
+Now that we can grab variables we can grab specific values, lats, and lons based off kwargs and/or heights.
 
 The lat/lons can be taken from the data as 2d arrays each
 ```Python
@@ -136,6 +136,29 @@ lat, lon
         [  0. ,   0.5,   1. , ..., 358.5, 359. , 359.5]]))
 >>>
 ```
+
+The actual values can be pulled for each lat/lon pair. This means the data is in a 2d array as well.
+The values can be extracted by the ```grbs.select()[0].values```
+
+```Python
+grbs.select(name="Geopotential Height",level=500)[0].values
+>>>
+array([[5221.7383, 5221.7383, 5221.7383, ..., 5221.7383, 5221.7383,
+        5221.7383],
+       [5218.3384, 5218.3784, 5218.3984, ..., 5218.2583, 5218.2983,
+        5218.3184],
+       [5215.058 , 5215.098 , 5215.138 , ..., 5214.9185, 5214.9585,
+        5215.0186],
+       ...,
+       [5100.058 , 5100.158 , 5100.2583, ..., 5099.7583, 5099.8584,
+        5099.9585],
+       [5097.058 , 5097.098 , 5097.138 , ..., 5096.9185, 5096.9585,
+        5097.0186],
+       [5093.4985, 5093.4985, 5093.4985, ..., 5093.4985, 5093.4985,
+        5093.4985]], dtype=float32)
+>>>
+```
+
 
 
 '\n'
