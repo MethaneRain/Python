@@ -167,3 +167,4 @@ hgt_500 = grbs.select(name="Geopotential Height",level=500)[0].data(lat1=20,lat2
 ---
 Plot
 ---
+![500mb Heights and Vorticity w/ MSLP](https://raw.githubusercontent.com/MethaneRain/Python-Jupyter/master/Jupyter-Notebooks/Gribs-Examples/GFS_4_mslp_500_hgts_vort_20191115_0000Z_F027.png)
