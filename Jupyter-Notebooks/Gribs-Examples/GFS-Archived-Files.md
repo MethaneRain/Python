@@ -1,7 +1,9 @@
-# Access data from gribs file types
+# Access GFS data from gribs file types
+
+<img src="https://www.earthsystemcog.org/site_media/logos/gfs4c.png">
 
 ## This can be very helpful as a lot of model data and other weather data are in this file type
-
+---
 I had to create a separate ```env``` for working with ```pygrib```, my libraries weren't playing nicely otherwise.
 
 In the terminal:
@@ -11,6 +13,20 @@ $ conda create -n test-pygrib python=3.7
 You must install all your Python libraries again since this is a blank slate environment
 
 $ conda activate test-pygrib
+---
+GFS Analysis and Forecast:
+* Some days are missing...
+
+* Roughly 10 days behind current date 
+
+* https://www.ncdc.noaa.gov/data-access/model-data/model-datasets/global-forcast-system-gfs
+
+---
+There are several ways to access data, lets take a look a some:
+---
+
+#### Simplest Method
+
 
 In your notebook:
 ```python
