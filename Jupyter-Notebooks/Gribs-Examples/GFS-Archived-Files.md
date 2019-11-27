@@ -63,7 +63,7 @@ pygrib's ```.select(kwargs)``` is a sudo search function. If you know the exact 
 
 ex:
 ```Python
-.select(name="MSLP")
+grbs.select(name="MSLP")
 
 >>>
 ---------------------------------------------------------------------------
@@ -79,7 +79,7 @@ ValueError: no matches found
 
 But knowing the GFS Forecast 1/2 or Full degrees grib files:
 ```Python
-.select(name="MSLP (Eta model reduction)")
+grbs.select(name="MSLP (Eta model reduction)")
 
 >>>
 [419:MSLP (Eta model reduction):Pa (instant):regular_ll:meanSea:level 0:fcst time 3 hrs:from 201911150000]
