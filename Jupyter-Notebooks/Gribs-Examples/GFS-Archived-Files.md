@@ -141,7 +141,7 @@ The actual values can be pulled for each lat/lon pair. This means the data is in
 The values can be extracted by the ```grbs.select()[0].values```
 
 ```Python
-grbs.select(name="Geopotential Height",level=500)[0].values
+hgt_500.values
 >>>
 array([[5221.7383, 5221.7383, 5221.7383, ..., 5221.7383, 5221.7383,
         5221.7383],
