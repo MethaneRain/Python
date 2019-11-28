@@ -1,6 +1,6 @@
 # Access GFS data from gribs file types
 
-<img src="https://www.earthsystemcog.org/site_media/logos/gfs4c.png">
+<img src="https://www.earthsystemcog.org/site_media/logos/gfs4c.png" width="50%">
 
 ## This can be very helpful as a lot of model data and other weather data are in this file type
 ---
