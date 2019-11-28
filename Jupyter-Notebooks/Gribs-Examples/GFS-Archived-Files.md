@@ -31,7 +31,7 @@ GFS Analysis and Forecast:
 ```grb``` will be the lines of the file read in
 
 ```python
-grbs = pygrib.open(_grib_file_)
+grbs = pygrib.open("gfs_4_20191110_0000_012.grb2")
 grb = grbs.read()
 ```
 There are so many variables, we can just print out a couple to see the data in raw form
