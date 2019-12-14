@@ -1,11 +1,13 @@
-# <i>netCDF Files</i>
+<font size = 20><i>netCDF Files</i></font>
 
-## Some quick tips for working with different <i>.nc</i> files
+---
+
+<font size = 16>Some quick tips for working with different <i>.nc</i> files</font>
 * GOES data - from saved file
 * Reanalysis data - from saved file
 * Thredds server model data - remotely from server file
 
-## GOES <i>.nc</i> file:
+<font size = 16>GOES <i>.nc</i> file:</font>
 ```python
 File = GOES16_samples_9[0]
 print(File)
@@ -137,7 +139,7 @@ print(ch9nc.keywords)
 >>> 'SPECTRAL/ENGINEERING > INFRARED WAVELENGTHS > INFRARED RADIANCE'
 ```
 
-### We can think of the file as a hierarchy
+<font size = 14>We can think of the file as a hierarchy</font>
 An example using the value of the satellite height of GOES:
 
 ch9nc
@@ -215,7 +217,7 @@ print(ch9nc.variables['goes_imager_projection'].perspective_point_height)
 
 >>> 35786023.0
 ```
-## Thredds Server <i>.nc</i> file:
+<font size = 16>Thredds Server <i>.nc</i> file:</font>
 
 There are some amazing tools out there now for getting the data on the TREDDS server. Siphon and NetCDF Server Sevice? (NCSS) make access the data pretty straight forward, even if you're not versed on the inner workings of these packages.
 
