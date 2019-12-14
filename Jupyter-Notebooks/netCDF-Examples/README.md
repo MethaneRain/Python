@@ -2,7 +2,9 @@
 
 ---
 <span style="color:red">cardinals</span>
-<span style="color:red">Some quick examples of atmospheric science ```.nc``` files</span>
+
+<span style="color:red">Some quick examples of atmospheric science ```.nc``` files
+
 * GOES data - from saved file
 * Reanalysis data - from saved file
 * Thredds server model data - remotely from server file
