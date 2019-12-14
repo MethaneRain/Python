@@ -2,7 +2,7 @@
 
 ---
 
-<font size = 16>Some quick tips for working with different <i>.nc</i> files</font>
+<font size = 200>Some quick tips for working with different <i>.nc</i> files</font>
 * GOES data - from saved file
 * Reanalysis data - from saved file
 * Thredds server model data - remotely from server file
