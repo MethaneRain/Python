@@ -5,6 +5,17 @@
 
 <span style="color:red">Some quick examples of atmospheric science ```.nc``` files
 
+<h2>
+
+```diff
+- red
++ green
+! orange
+# gray
+```
+
+</h2>
+
 * GOES data - from saved file
 * Reanalysis data - from saved file
 * Thredds server model data - remotely from server file
