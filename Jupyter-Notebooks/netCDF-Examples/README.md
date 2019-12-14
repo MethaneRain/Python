@@ -3,7 +3,7 @@
 ---
 <span style="color:red">cardinals</span>
 
-<span style="color:red">Some quick examples of atmospheric science ```.nc``` files
+<span style="color:red">Some quick examples of atmospheric science ```.nc``` files</span>
 
 <h2>
 
