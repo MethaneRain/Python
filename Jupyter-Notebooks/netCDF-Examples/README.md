@@ -1,9 +1,9 @@
 <font size = 20><i>netCDF Files</i></font>
 
 ---
-<span style="color:red">cardinals</span>
+<span style="color:red;">cardinals </span>
 
-<span style="color:red">Some quick examples of atmospheric science ```.nc``` files</span>
+<span style="color:red;">Some quick examples of atmospheric science ```.nc``` files </span>
 
 <h2>
 
