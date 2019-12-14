@@ -1,11 +1,12 @@
 <font size = 20><i>netCDF Files</i></font>
 
 ---
-
-<font size = 16>Some quick tips for working with different <i>.nc</i> files</font>
+<span style="color:red">cardinals</span>
+<span style="color:red">Some quick examples of atmospheric science ```.nc``` file:</span with different <i>.nc</i> files</font>
 * GOES data - from saved file
 * Reanalysis data - from saved file
 * Thredds server model data - remotely from server file
+* ECMWF reanalysis data
 
 <font size = 16>GOES <i>.nc</i> file:</font>
 ```python
