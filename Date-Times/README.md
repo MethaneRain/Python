@@ -55,7 +55,7 @@ print(time[:])
 
  ---
 
-<h3> First, the ```netCDF4``` package has the ```num2date``` method. </h3>
+<h3> First, the <i>netCDF4</i> package has the <i>num2date</i> method. </h3>
 
 Let's take a quick look the docstring for the ```num2date``` method:
 
