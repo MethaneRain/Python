@@ -146,4 +146,4 @@ array([datetime.datetime(2019, 1, 1, 12, 0),
        datetime.datetime(2019, 1, 31, 12, 0)], dtype=object)
 ```
 
-Awesome! Now we can see we have a month's worth of daily time steps at 12Z for January.
+Awesome! Now we can see we have a month's worth of daily time steps at 12Z for January 2019.
