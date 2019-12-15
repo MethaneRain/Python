@@ -1,4 +1,4 @@
-# Working with Datetimes
+# Working with Date-Time Objects
 
 Within a data array, metadata typically exists along with the actual variable data. One helpful piece of information within the metadata are the time stamps of the files/data values.
 
