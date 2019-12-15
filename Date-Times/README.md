@@ -8,7 +8,7 @@ within Python there are packages like ```Numpy``` and the data frameworks like `
 <h2> Example 1 </h2>
 <h3> Let's take a look at some archived ECMWF data </h3>
 
-Importing the ```netCDF4``` package and ```Dataset``` method to read int he data and then grabbing the time variable:
+Importing the ```netCDF4``` package and ```Dataset``` method to read in the data and then grabbing the time variable:
 
 ```Python
 import netCDF4
