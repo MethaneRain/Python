@@ -31,4 +31,20 @@ link
 >>> 'latest.html?dataset=grib/NCEP/GFS/Global_0p25deg/GFS_Global_0p25deg_20191010_1200.grib2'
 
 
-~~~~
+---
+
+Gathering SPC's storm report ```csv``` files
+
+* Filtered Tornado Reports:
+
+```Python
+import requests
+
+print('Beginning file download with requests')
+
+url = "https://www.spc.noaa.gov/climo/reports/today_torn.csv"
+r = requests.get(url)
+
+with open('torn_rpts.csv', 'wb') as f:
+    f.write(r.content)
+```
