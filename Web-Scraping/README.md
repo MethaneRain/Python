@@ -29,7 +29,7 @@ one_a_tag = soup.findAll('a')[0]
 link = one_a_tag['href']
 link
 >>> 'latest.html?dataset=grib/NCEP/GFS/Global_0p25deg/GFS_Global_0p25deg_20191010_1200.grib2'
-
+~~~
 
 ---
 
@@ -37,7 +37,7 @@ Gathering SPC's storm report ```csv``` files
 
 * Filtered Tornado Reports:
 
-```Python
+~~~Python
 import requests
 
 print('Beginning file download with requests')
@@ -47,4 +47,4 @@ r = requests.get(url)
 
 with open('torn_rpts.csv', 'wb') as f:
     f.write(r.content)
-```
+~~~
