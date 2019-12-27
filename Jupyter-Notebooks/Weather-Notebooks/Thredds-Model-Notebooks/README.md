@@ -10,7 +10,7 @@ With the NCSS and Siphon package, there are several different ways of accessing 
 
 ---
 
-* Using the main web address of the product:
+<h3> Using the main web address of the product:</h3>
 
 ex: GFS 20km CONUS
 
@@ -44,7 +44,7 @@ query.variables(precip_name).add_lonlat()
 data = ncss.get_data(query)
 ```
 
-* Using a recurisve search from the top catalog to your desired product:
+<h3> Using a recurisve search from the top catalog to your desired product:</h3>
 
 ex: National Blend of Models (NMB) CONUS Gridded Forecast
 
@@ -56,7 +56,9 @@ new_cat_anl = ref_anl.follow()
 print(new_cat_anl)
 >>>
 Unidata THREDDS Data Server - NCEP models
+```
 
+```Python
 j = 0
 for i in new_cat_anl.catalog_refs:
     print(f'Index {j}: {i}')
@@ -81,7 +83,9 @@ Index 14: National Model Blend Oceanic Grids
 Index 15: National Model Blend Alaska Grids
 Index 16: National Model Blend Hawaii Grids
 Index 17: National Model Blend Puerto Rico Grids
+```
 
+```Python
 model_anl = new_cat_anl.catalog_refs[13]
 Prod = model_anl
 print(Prod)
@@ -90,7 +94,9 @@ print("Product Catalog url:",model_anl.href)
 >>>
 National Model Blend CONUS Grids
 Product Catalog url: https://thredds.ucar.edu/thredds/catalog/grib/NCEP/NBM/CONUS/catalog.xml
+```
 
+```Python
 gfs_anl_cat = model_anl.follow()
 ds_anl = gfs_anl_cat.datasets[1]
 print("Variable Name:",ds_anl.name)
