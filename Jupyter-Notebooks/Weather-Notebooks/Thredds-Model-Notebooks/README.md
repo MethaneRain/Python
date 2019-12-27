@@ -44,6 +44,8 @@ query.variables(precip_name).add_lonlat()
 data = ncss.get_data(query)
 ```
 
+---
+
 <h3> Using a recurisve search from the top catalog to your desired product:</h3>
 
 ex: National Blend of Models (NMB) CONUS Gridded Forecast
