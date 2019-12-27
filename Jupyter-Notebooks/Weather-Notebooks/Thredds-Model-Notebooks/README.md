@@ -56,6 +56,7 @@ top_cat = TDSCatalog('http://thredds.ucar.edu/thredds/catalog.xml')
 ref_anl = top_cat.catalog_refs['Forecast Products and Analyses']
 new_cat_anl = ref_anl.follow()
 print(new_cat_anl)
+
 >>>
 Unidata THREDDS Data Server - NCEP models
 ```
