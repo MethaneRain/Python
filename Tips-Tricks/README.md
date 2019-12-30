@@ -18,3 +18,15 @@ echo "a=$1 b=$2 c=$3"
 >>>
 a=these b=are positional c=python variables!
 ```
+
+---
+
+A little cool ```markdown``` styling:
+
+4 day forecasts: old graphics             |  Combined
+:-------------------------:|:-------------------------:
+![](https://www.wpc.ncep.noaa.gov/basicwx/92fndfd.gif)  |  ![](https://raw.githubusercontent.com/MethaneRain/Python-Jupyter/master/Jupyter-Notebooks/Weather-Notebooks/Various%20Weather%20Agency%20Maps/WPC_4_Day%20Forecast_%2017%20November%202019%2011%3A00Z.png)
+
+3 day forecasts: updated graphics             |  Combined
+:-------------------------:|:-------------------------:
+![](https://www.wpc.ncep.noaa.gov/noaa/noaad2.gif)  |  ![](https://raw.githubusercontent.com/MethaneRain/Python-Jupyter/master/Jupyter-Notebooks/Weather-Notebooks/Various%20Weather%20Agency%20Maps/WPC_3_Day%20Forecast_%2017%20November%202019%2011%3A00Z.png)
