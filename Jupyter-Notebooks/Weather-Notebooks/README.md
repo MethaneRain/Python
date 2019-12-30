@@ -19,18 +19,18 @@ Sometimes the notebooks aren't showing in GitHub so here are some links via http
 ![](https://raw.githubusercontent.com/MethaneRain/Python-Jupyter/master/Jupyter-Notebooks/Weather-Notebooks/Sample-Maps/Slide1.png)
 
 * Planetary Boundary Layer
-<img src="https://raw.githubusercontent.com/MethaneRain/Python-Jupyter/master/Jupyter-Notebooks/Weather-Notebooks/Sample-Mapss/PBL_heights.png" width="60%">
+<img src="https://raw.githubusercontent.com/MethaneRain/Python-Jupyter/master/Jupyter-Notebooks/Weather-Notebooks/Sample-Maps/PBL_heights.png" width="60%">
 
 * RAP Snow Accumulation Forecast
 <img src="https://raw.githubusercontent.com/MethaneRain/Python-Jupyter/master/Jupyter-Notebooks/Weather-Notebooks/Sample-Maps/Snow_Accum_CO_2019_04_10_21Z.png" width="60%">
 
 ## Sample of an image saved from a website, WPC 4-day surface analysis forecast. I was able to make a four panel plot to put them all in one image:
-![WPC Forecast](https://github.com/MethaneRain/Weather-Jupyter-Notebooks/blob/master/Various%20Weather%20Agency%20Maps/Sample%20Images/RESIZE_WPC_4_Day%20Forecast_18_January_2019_0624Z.png)
+![WPC Forecast](https://github.com/MethaneRain/Python-Jupyter/blob/master/Jupyter-Notebooks/Weather-Notebooks/Sample-Maps/RESIZE_WPC_4_Day%20Forecast_18_January_2019_0624Z.png)
 
 ## My final effort to plot GOES images: 
 * see more in my GOES section - https://github.com/MethaneRain/Weather-Jupyter-Notebooks/tree/master/GOES%20Satellite%20Maps/Sample%20Maps
 
-<img src="https://github.com/MethaneRain/Weather-Jupyter-Notebooks/blob/master/GOES%20Satellite%20Maps/Sample%20Maps/GOES17_TrueColor_2019_01_16_1742.png" width="40%"><img src = "https://github.com/MethaneRain/Weather-Jupyter-Notebooks/blob/master/GOES%20Satellite%20Maps/Sample%20Maps/GOES17_Ch13_2019_01_16_1742.png" width='40%'>
+<img src="https://github.com/MethaneRain/Python-Jupyter/blob/master/Jupyter-Notebooks/Weather-Notebooks/Sample-Maps/GOES17_TrueColor_2019_01_16_1742.png" width="40%"><img src = "https://github.com/MethaneRain/Python-Jupyter/blob/master/Jupyter-Notebooks/Weather-Notebooks/Sample-Maps/GOES17_Ch13_2019_01_16_1742.png" width='40%'>
 
 ## Comparing RAP Forecast and NWS Current Radar
 * Finally got a chance to plot both forecast and actual Radar data to be able to compare the two plots.
