@@ -7,6 +7,8 @@
 
 Passing variables as strings:
 
+* Bash example
+
 ```Python
 a = 'these'
 b = 'are positional'
@@ -17,6 +19,16 @@ echo "a=$1 b=$2 c=$3"
 
 >>>
 a=these b=are positional c=python variables!
+```
+
+* f-strings example (Python >=3.6)
+
+```Python
+var = 36
+print(f'2 times 18 will equal {var}')
+
+>>>
+2 times 18 will equal 36
 ```
 
 ---
