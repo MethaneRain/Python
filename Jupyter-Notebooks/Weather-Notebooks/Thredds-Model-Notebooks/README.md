@@ -55,8 +55,8 @@ print(start)
 ```
 
 ```Python
-delt_t = 48
-end = now + timedelta(hours=delt_t)
+delta_t = 48
+end = now + timedelta(hours=delta_t)
 
 query = ncss.query()
 query.time_range(start, end)
@@ -86,8 +86,8 @@ now = datetime(today_year,today_month,today_day,0,0)
 # define time range you want the data for
 start = now
 print(start)
-delt_t = 48
-end = now + timedelta(hours=delt_t)
+delta_t = 48
+end = now + timedelta(hours=delta_t)
 
 query = ncss.query()
 query.time_range(start, end)
