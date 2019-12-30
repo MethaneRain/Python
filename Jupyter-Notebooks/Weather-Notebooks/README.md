@@ -10,9 +10,9 @@ Sometimes the notebooks aren't showing in GitHub so here are some links via http
 ## Some MetPy example plots with a bit of my own customization:
 ![Jets](https://github.com/MethaneRain/Python-Jupyter/blob/master/Jupyter-Notebooks/Weather-Notebooks/Sample-Maps/Resized_SIMPLE_250mb_Heights_Winds_2019_02_13_12Z.png)![Sounding](https://github.com/MethaneRain/Weather-Jupyter-Notebooks/blob/master/MetPy-Sounding/Sample-Maps/Resized_Sounding_DNR_2018072900_CIN.png)
 
-![Vorticity](https://raw.githubusercontent.com/MethaneRain/Python-Jupyter/master/Jupyter-Notebooks/Weather-Notebooks/Sample-Maps/Resized_HILO_Vort_Heights_500mb_2019_03_13_00Z.png) ![6-hr Precip Accum](https://github.com/MethaneRain/Python-Jupyter/tree/master/Jupyter-Notebooks/Weather-Notebooks/Sample-Maps/Resized_Precip_Accum2019_03_13_12Z.png)
+![Vorticity](https://raw.githubusercontent.com/MethaneRain/Python-Jupyter/master/Jupyter-Notebooks/Weather-Notebooks/Sample-Maps/Resized_HILO_Vort_Heights_500mb_2019_03_13_00Z.png) ![6-hr Precip Accum](https://raw.githubusercontent.com/MethaneRain/Python-Jupyter/master/Jupyter-Notebooks/Weather-Notebooks/Sample-Maps/Resized_Precip_Accum2019_03_13_12Z.png)
 
-![PV Jet](https://github.com/MethaneRain/Python-Jupyter/tree/master/Jupyter-Notebooks/Weather-Notebooks/Sample-Maps/Resized_Jet_PV_2019_02_13_15Z.png) ![](https://github.com/MethaneRain/Python-Jupyter/tree/master/Jupyter-Notebooks/Weather-Notebooks/Sample-Maps/Resized_Dew_Pts_2019_03_13_09Z.png)
+![PV Jet](https://raw.githubusercontent.com/MethaneRain/Python-Jupyter/master/Jupyter-Notebooks/Weather-Notebooks/Sample-Maps/Resized_Jet_PV_2019_02_13_15Z.png) ![](https://raw.githubusercontent.com/MethaneRain/Python-Jupyter/master/Jupyter-Notebooks/Weather-Notebooks/Sample-Maps/Resized_Dew_Pts_2019_03_13_09Z.png)
 
 ![](https://github.com/MethaneRain/Python-Jupyter/tree/master/Jupyter-Notebooks/Weather-Notebooks/Sample-Maps/Resized_4_Panel_Isentropic2019_02_21_00Z.png)
 
