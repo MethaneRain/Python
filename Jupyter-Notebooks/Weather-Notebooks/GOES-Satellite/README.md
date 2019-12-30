@@ -12,7 +12,7 @@ There are still some things that need to be worked out and clarified in the code
 
 The files can be quickly downloaded via Python and rclone with Amazon Web Services remote connection setup. 
 
-Take a look at the notebook here: https://github.com/MethaneRain/Weather-Jupyter-Notebooks/blob/master/GOES%20Satellite%20Maps/rclone_AWS_GOES.ipynb
+Take a look at the notebook here: https://github.com/MethaneRain/Python-Jupyter/blob/master/Jupyter-Notebooks/Weather-Notebooks/GOES-Satellite/rclone_AWS_GOES.ipynb
 
 With setup instructions here: https://github.com/blaylockbk/pyBKB_v3/blob/master/rclone_howto.md
 
