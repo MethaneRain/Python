@@ -33,7 +33,7 @@ A little cool ```markdown``` styling:
 ![](https://www.wpc.ncep.noaa.gov/noaa/noaad2.gif)  |  ![](https://raw.githubusercontent.com/MethaneRain/Python-Jupyter/master/Jupyter-Notebooks/Weather-Notebooks/Various%20Weather%20Agency%20Maps/WPC_3_Day%20Forecast_%2017%20November%202019%2011%3A00Z.png)
 ```
 
-#### THe above code in a ```markdonw``` cell will produce the image below!
+<h6> The above code in a ```markdown``` cell will produce the image below! </h6>
 
 4 day forecasts: old graphics             |  Combined
 :-------------------------:|:-------------------------:
