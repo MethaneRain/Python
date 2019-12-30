@@ -14,6 +14,63 @@ With the NCSS and Siphon package, there are several different ways of accessing 
 
 ex: GFS 20km CONUS
 
+If you want to specify the initialization hour GRIB file:
+* in this case I'm grabbing the 00Z init hour of current day's catalog
+
+```Python
+from datetime import datetime, timedelta
+now = datetime.utcnow()
+today_year = now.year
+today_hour = now.month
+today_day = now.day
+init_hour = '0000'
+
+vort_name = "Absolute_vorticity_isobaric"
+hgt_name = "Geopotential_height_isobaric"
+mslp_name = "MSLP_Eta_model_reduction_msl"
+
+# Request the GFS data from the thredds server
+gfs = TDSCatalog(f'http://thredds-jetstream.unidata.ucar.edu/thredds/catalog/grib/NCEP/GFS/CONUS_20km/GFS_CONUS_20km_{today_year}{today_month}{today_day}_{init_hour}.grib2/catalog.xml')
+
+print(list(gfs.datasets)[0])
+
+>>>
+GFS_CONUS_20km_20191230_0000.grib2
+```
+
+```Python
+dataset = list(gfs.datasets.values())[0]
+
+# Create NCSS object to access the NetcdfSubset
+ncss = NCSS(dataset.access_urls['NetcdfSubset'])
+
+# get current date and time
+now = datetime(today_year,today_month,today_day,init_hour,0)
+# define time range you want the data for
+start = now
+print(start)
+
+>>>
+2019-12-30 00:00:00
+```
+
+```Python
+delta_t = 48
+end = now + timedelta(hours=delta_t)
+
+query = ncss.query()
+query.time_range(start, end)
+Lat = query.lonlat_box(north=60, south=20, east=310, west=230)
+query.accept('netcdf4')
+query.variables(vort_name,hgt_name,mslp_name).add_lonlat(True)
+
+
+# Request data for the variables you want to use
+data = ncss.get_data(query)
+```
+
+Or grabbing the desired date range from the Best catalog entry ():
+
 ```Python
 gfs = TDSCatalog('http://thredds-jetstream.unidata.ucar.edu/thredds/catalog/grib/'
                  'NCEP/GFS/CONUS_20km/catalog.xml')
@@ -25,13 +82,12 @@ dataset = list(gfs.datasets.values())[1]
 ncss = NCSS(dataset.access_urls['NetcdfSubset'])
 
 # get current date and time
-#now = forecast_times[0]
 now = datetime(today_year,today_month,today_day,0,0)
 # define time range you want the data for
 start = now
 print(start)
-delt_t = 48
-end = now + timedelta(hours=delt_t)
+delta_t = 48
+end = now + timedelta(hours=delta_t)
 
 query = ncss.query()
 query.time_range(start, end)
