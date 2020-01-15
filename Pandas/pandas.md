@@ -15,6 +15,12 @@ Several data file types can be used with Pandas:
 ~~~python
 import pandas as import pd
 weather = pd.read_csv("weather.csv")
+print(type(weather))
+
+>>>
+pandas.core.frame.DataFrame
+~~~
+~~~python
 print(weather)
 
 >>>
@@ -275,4 +281,6 @@ weather.loc[weather["R AvSLP"] == 1004.5, "R AvSLP"].count()
 ---
 ---
 
-## Taking a break from working with actual data, we can play around a bit with populating dataframes with our own data. This is obviously a very helpful skill if you plan on using Pandas further.
+## Taking a break from working with actual data, we can play around a bit with populating data frames with our own data. This is obviously a very helpful skill if you plan on using Pandas further.
+
+Panda Series is a powerful data structure, it has some draw backs: you can only store one attribute for each key. If we turn our attention to Pandas DataFrame (which was the data structure of our weather data above), we can be more flexible in the data that is stored. DataFrames are essentially a sequence of Series objects.
