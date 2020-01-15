@@ -372,7 +372,7 @@ School	MSU	MSU	CU	MSU
 
 
  
-| Intro to Meteorology            |  Advanced Synoptic    | Dynamics    | Meso
+row | Intro to Meteorology            |  Advanced Synoptic    | Dynamics    | Meso
 :-------------------------:|:-------------------------:
 Grade | A  |  A | A | B
 :-------------------------:|:-------------------------:
