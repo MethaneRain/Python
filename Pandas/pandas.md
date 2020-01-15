@@ -269,7 +269,20 @@ Mn            2
 R AvSLP       2
 ~~~
 
-OK, a little redundant because we know the variable total will be 2 for each of the 2 times MSLP is 1004.5. We can clean it up a tad bit by invoking an additional call in the ```loc``` method. If we add the variable name as well, it will count the number of times 1004.5 is in the ```R AvSLP``` variable.
+OK, a little redundant because we know the variable total will be 2 for each of the 2 times MSLP is 1004.5. We can clean it up a tad bit by invoking an additional call in the ```loc``` method.
+
+However if we want the Day number associated with these values, we can add the variable name as well
+
+~~~python
+weather.loc[weather["R AvSLP"] == 1004.5, "Day"]
+
+>>>
+0    1
+1    2
+Name: Day, dtype: int64
+~~~
+
+If we add the variable ```R AvSLP``` name as well, it will count the number of times 1004.5 is in the ```R AvSLP``` variable.
 
 ~~~Python
 weather.loc[weather["R AvSLP"] == 1004.5, "R AvSLP"].count()
@@ -279,8 +292,64 @@ weather.loc[weather["R AvSLP"] == 1004.5, "R AvSLP"].count()
 ~~~
 
 ---
+
+We can also manipulate the data of columns to create new columns. We can make a copy of the data so we don't ruin our original data set:
+
+~~~Python
+df = weather.copy()
+~~~
+
+Let's just make a new column for the difference of high and low temperature for each day. Call the new variable ```DiffT```
+
+~~~python
+df["DiffT"] = df.MxT-df.MnT
+~~~
+
+The beautiful thing about working with Pandas is that we don't have to iterate over all rows like we would for a list!
+
+Check out the new column data:
+
+~~~Python
+df["DiffT"]
+
+>>>
+0     29
+1     16
+2     22
+3     18
+4     24
+5     20
+6     16
+7     21
+8     54
+9     20
+10    32
+11    15
+12    11
+13     2
+14     9
+15    20
+16    24
+17    30
+18    20
+19    27
+20    27
+21    26
+22    22
+23    13
+24    18
+25    33
+26    19
+27    16
+28    22
+29    45
+Name: DiffT, dtype: int64
+~~~
+---
 ---
 
 ## Taking a break from working with actual data, we can play around a bit with populating data frames with our own data. This is obviously a very helpful skill if you plan on using Pandas further.
 
 Panda Series is a powerful data structure, it has some draw backs: you can only store one attribute for each key. If we turn our attention to Pandas DataFrame (which was the data structure of our weather data above), we can be more flexible in the data that is stored. DataFrames are essentially a sequence of Series objects.
+
+---
