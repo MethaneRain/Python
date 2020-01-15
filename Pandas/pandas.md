@@ -8,6 +8,8 @@ Several data file types can be used with Pandas:
 * sql
 * etc.
 
+---
+
 Let's take a look at a sample csv file of weather data:
 
 ~~~python
@@ -49,6 +51,7 @@ Day	MxT	MnT	AvT	AvDP	1HrP TPcpn	PDir	AvSp	Dir	MxS	SkyC	MxR	Mn	R AvSLP
 29	30	90	45	68	63.6	0	240	6.0	220	17	4.8	200	41	1022.7
 ~~~
 
+---
 
 Pandas can parse the data into columns if necessary and can be transposed also.
 
@@ -60,6 +63,8 @@ Index(['Day', 'MxT', 'MnT', 'AvT', 'AvDP', '1HrP TPcpn', 'PDir', 'AvSp', 'Dir',
        'MxS', 'SkyC', 'MxR', 'Mn', 'R AvSLP'],
       dtype='object')
 ~~~
+
+---
 
 Sweet, now we can get an idea of the column names that we might be interested in working with. Say the Average MSLP data is of interest to us. We can pull just that column now that we can access the column by name.
 
@@ -102,6 +107,8 @@ weather["R AvSLP"]
 Name: R AvSLP, dtype: float64
 ~~~
 
+---
+
 We can assign this to a Pandas Series object which is similar to a native list or an array.
 
 Check out the docs for the Series data type here:
@@ -115,6 +122,7 @@ type(slp)
 pandas.core.series.Series
 ~~~
 
+---
 
 Grabbing the columns is great if you want the values for a specific variable, but suppose you're more interested in the all the variables for a specific row (Day number in our case here).
 
@@ -141,6 +149,8 @@ MxR	93.0	70.0	59.0	62.0	84.0	93.0	90.0	93.0	78.0	84.0	...	87.0	78.0	68.0	74.0	81
 Mn	23.0	28.0	24.0	40.0	55.0	60.0	48.0	41.0	46.0	40.0	...	35.0	38.0	42.0	48.0	29.0	45.0	47.0	51.0	33.0	41.0
 R AvSLP	1004.5	1004.5	1016.8	1021.1	1014.4	1012.7	1021.8	1026.3	1018.6	1019.0	...	1030.7	1026.4	1021.3	1018.2	1019.6	1014.9	1009.0	1011.0	1020.6	1022.7
 ~~~~
+
+---
 
 Now the object can be called like an index for a list. Let's take a look at all the variables for Day number 1 (index number 0):
 
