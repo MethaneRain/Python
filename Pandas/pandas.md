@@ -1,7 +1,6 @@
 The Pandas package is extremely helpful, but it also has many methods that can come in handy when working with dataframes.
 
 Several data file types can be used with Pandas:
-
 * csv
 * json
 * excel
@@ -64,7 +63,7 @@ Index(['Day', 'MxT', 'MnT', 'AvT', 'AvDP', '1HrP TPcpn', 'PDir', 'AvSp', 'Dir',
 
 Sweet, now we can get an idea of the column names that we might be interested in working with. Say the Average MSLP data is of interest to us. We can pull just that column now that we can access the column by name.
 
-This can be achieved either by index method ```weather["R AvSLP"]```
+This can be achieved by index method ```weather["R AvSLP"]```
 
 ~~~Python
 weather["R AvSLP"]
@@ -103,7 +102,18 @@ weather["R AvSLP"]
 Name: R AvSLP, dtype: float64
 ~~~
 
+We can assign this to a Pandas Series object which is similar to a native list or an array.
 
+Check out the docs for the Series data type here:
+* https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html
+
+~~~Python
+slp = weather["R AvSLP"]
+type(slp)
+
+>>>
+pandas.core.series.Series
+~~~
 
 ~~~python
 
