@@ -1,4 +1,4 @@
-# Pandas are another flexible and easy to use package that will allow exploration and manipulation of data, as well as an interface into Python for plotting and other usage.
+### Pandas are another flexible and easy to use package that will allow exploration and manipulation of data, as well as an interface into Python for plotting and other usage.
 
 ___Pandas work in DataFrames___
 
