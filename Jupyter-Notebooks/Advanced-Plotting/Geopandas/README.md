@@ -1,6 +1,6 @@
 ## Geopandas
 
-Geoandas is a great visualization tool for woking with geospatial data
+Geopandas is a great visualization tool for woking with geospatial data
 
 
 Sample Output:
