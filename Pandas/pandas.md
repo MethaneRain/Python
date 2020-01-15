@@ -115,11 +115,16 @@ type(slp)
 pandas.core.series.Series
 ~~~
 
+
+Grabbing the columns is great if you want the values for a specific variable, but suppose you're more interested in the all the variables for a specific row (Day number in our case here).
+
+Unfortunately Pandas don't have a rows method like the columns, but as hinted at earlier, the data can be transposed. This will swap rows and columns.
+
 ~~~python
+weatherT = weather.T
+print(weatherT)
 
-
-
-
+>>>
 0	1	2	3	4	5	6	7	8	9	...	20	21	22	23	24	25	26	27	28	29
 Day	1.0	2.0	3.0	4.0	5.0	6.0	7.0	8.0	9.0	10.0	...	21.0	22.0	23.0	24.0	25.0	26.0	27.0	28.0	29.0	30.0
 MxT	88.0	79.0	77.0	77.0	90.0	81.0	73.0	75.0	86.0	84.0	...	86.0	90.0	90.0	90.0	90.0	97.0	91.0	84.0	88.0	90.0
@@ -136,3 +141,26 @@ MxR	93.0	70.0	59.0	62.0	84.0	93.0	90.0	93.0	78.0	84.0	...	87.0	78.0	68.0	74.0	81
 Mn	23.0	28.0	24.0	40.0	55.0	60.0	48.0	41.0	46.0	40.0	...	35.0	38.0	42.0	48.0	29.0	45.0	47.0	51.0	33.0	41.0
 R AvSLP	1004.5	1004.5	1016.8	1021.1	1014.4	1012.7	1021.8	1026.3	1018.6	1019.0	...	1030.7	1026.4	1021.3	1018.2	1019.6	1014.9	1009.0	1011.0	1020.6	1022.7
 ~~~~
+
+Now the object can be called like an index for a list. Let's take a look at all the variables for Day number 1 (index number 0):
+
+~~~Python
+weatherT[0]
+
+>>>
+Day              1.0
+MxT             88.0
+MnT             59.0
+AvT             74.0
+AvDP            53.8
+1HrP TPcpn       0.0
+PDir           280.0
+AvSp             9.6
+Dir            270.0
+MxS             17.0
+SkyC             1.6
+MxR             93.0
+Mn              23.0
+R AvSLP       1004.5
+Name: 0, dtype: float64
+~~~
