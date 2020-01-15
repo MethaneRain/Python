@@ -152,7 +152,7 @@ R AvSLP	1004.5	1004.5	1016.8	1021.1	1014.4	1012.7	1021.8	1026.3	1018.6	1019.0	..
 
 ---
 
-Now the object can be called like an index for a list. Let's take a look at all the variables for Day number 1 (index number 0):
+Now the object can be called like an index for a list. Let's take a look at all the variables for Day 1 (index number 0):
 
 ~~~Python
 weatherT[0]
