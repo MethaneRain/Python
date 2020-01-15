@@ -10,7 +10,7 @@ Several data file types can be used with Pandas:
 
 ---
 
-Let's take a look at a sample csv file of weather data:
+Let's take a look at a sample ```csv``` file of weather data:
 
 ~~~python
 import pandas as import pd
@@ -271,3 +271,8 @@ weather.loc[weather["R AvSLP"] == 1004.5, "R AvSLP"].count()
 >>>
 2
 ~~~
+
+---
+---
+
+Taking a break from working with actual data, we can play around a bit with populating dataframes with our own data. This is obviously a very helpful skill if you plan on using Pandas further.
