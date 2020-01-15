@@ -174,3 +174,100 @@ Mn              23.0
 R AvSLP       1004.5
 Name: 0, dtype: float64
 ~~~
+
+---
+
+We can dive deeper into the flexibility of Pandas
+
+How about trying to find how many times the average MSLP was, say 1004.5 hPa. Pandas can do it!
+
+First, we need to locate in the data where the value of 1004.5 exist. The ```.loc``` will be our guide.
+
+~~~python
+weather.loc?
+
+>>>
+Type:        property
+String form: <property object at 0x1211c7688>
+Docstring:  
+Access a group of rows and columns by label(s) or a boolean array.
+
+``.loc[]`` is primarily label based, but may also be used with a
+boolean array.
+
+Allowed inputs are:
+
+- A single label, e.g. ``5`` or ``'a'``, (note that ``5`` is
+  interpreted as a *label* of the index, and **never** as an
+  integer position along the index).
+- A list or array of labels, e.g. ``['a', 'b', 'c']``.
+- A slice object with labels, e.g. ``'a':'f'``.
+
+  .. warning:: Note that contrary to usual python slices, **both** the
+      start and the stop are included
+
+- A boolean array of the same length as the axis being sliced,
+  e.g. ``[True, False, True]``.
+- A ``callable`` function with one argument (the calling Series, DataFrame
+  or Panel) and that returns valid output for indexing (one of the above)
+
+See more at :ref:`Selection by Label <indexing.label>`
+
+Raises
+------
+KeyError:
+    when any items are not found
+
+See Also
+--------
+DataFrame.at : Access a single value for a row/column label pair.
+DataFrame.iloc : Access group of rows and columns by integer position(s).
+DataFrame.xs : Returns a cross-section (row(s) or column(s)) from the
+    Series/DataFrame.
+Series.loc : Access group of values using labels.
+
+~~~~
+
+So we just need to pass the variable name and the value we're looking for:
+
+~~~python
+weather.loc[weather["R AvSLP"] == 1004.5]
+
+>>>
+Day	MxT	MnT	AvT	AvDP	1HrP TPcpn	PDir	AvSp	Dir	MxS	SkyC	MxR	Mn	R AvSLP
+0	1	88	59	74	53.8	0	280	9.6	270	17	1.6	93	23	1004.5
+1	2	79	63	71	46.5	0	330	8.7	340	23	3.3	70	28	1004.5
+~~~
+
+This call grabs the entire row where the MSLP is 1004.5
+
+The last piece we need is the ```.count``` method to get total it up for us:
+
+~~~python
+weather.loc[weather["R AvSLP"] == 1004.5].count()
+
+>>>
+Day           2
+MxT           2
+MnT           2
+AvT           2
+AvDP          2
+1HrP TPcpn    2
+PDir          2
+AvSp          2
+Dir           2
+MxS           2
+SkyC          2
+MxR           2
+Mn            2
+R AvSLP       2
+~~~
+
+OK, a little redundant because we know the variable total will be 2 for each of the 2 times MSLP is 1004.5. We can clean it up a tad bit by invoking an additional call in the ```loc``` method. If we add the variable name as well, it will count the number of times 1004.5 is in the ```R AvSLP``` variable.
+
+~~~Python
+weather.loc[weather["R AvSLP"] == 1004.5, "R AvSLP"].count()
+
+>>>
+2
+~~~
