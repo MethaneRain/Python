@@ -353,3 +353,19 @@ Name: DiffT, dtype: int64
 Panda Series is a powerful data structure, it has some draw backs: you can only store one attribute for each key. If we turn our attention to Pandas DataFrame (which was the data structure of our weather data above), we can be more flexible in the data that is stored. DataFrames are essentially a sequence of Series objects.
 
 ---
+
+I will make a new DataFrame based off some meteorology courses I've taken. I want the name of the course to be the column headers (variables) and each row to be associated with the grade received, professor, and university I took it at.
+
+~~~Python
+met_courses = pd.DataFrame(
+    index=["Grade","Prof","School"],
+    data=[["A","A","A","B"],["Wagner","Schuenemann","Cassano","Ng"],["MSU","MSU","CU","MSU"]],
+    columns=["Intro to Meteorology", "Advanced Synoptic", "Dynamics","Meso"])
+print(met_courses)
+
+>>>
+Intro to Meteorology	Advanced Synoptic	Dynamics	Meso
+Grade	A	A	A	B
+Prof	Wagner	Schuenemann	Cassano	Ng
+School	MSU	MSU	CU	MSU
+~~~
