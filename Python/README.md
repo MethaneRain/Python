@@ -143,6 +143,6 @@ fred.description()
 "Hi, my name is Fred and I'm 42 years old and work for NWS!"
 ~~~
 
-Wonderful, the ```change_empoyer``` method allowed us to change the initial ```employer``` attribute!
+Wonderful, the ```change_employer``` method allowed us to change the initial ```employer``` attribute!
 
 ---
