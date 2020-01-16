@@ -32,8 +32,8 @@ All <em>classes</em> create <em>objects</em> and all objects therefore contain c
 
 There are two types of attributes in Python:
 
-* 1) Class attributes
-* 2) Instance Attributes
+  - Class attributes
+  - Instance Attributes
 
 ---
 
