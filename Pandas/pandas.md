@@ -369,6 +369,3 @@ Grade	A	A	A	B
 Prof	Wagner	Schuenemann	Cassano	Ng
 School	MSU	MSU	CU	MSU
 ~~~
-
-
- 
