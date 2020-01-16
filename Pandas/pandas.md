@@ -369,3 +369,9 @@ Grade	A	A	A	B
 Prof	Wagner	Schuenemann	Cassano	Ng
 School	MSU	MSU	CU	MSU
 ~~~
+
+| Intro to Meteorology        | Advanced Synoptic           | Dynamics  | Meso|
+| ------------- |:-------------:| -----:|-----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
