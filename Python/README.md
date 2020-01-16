@@ -144,4 +144,5 @@ fred.description()
 ~~~
 
 Wonderful, the ```change_empoyer``` method allowed us to change the initial ```employer``` attribute!
+
 ---
