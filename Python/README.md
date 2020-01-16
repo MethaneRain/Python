@@ -32,8 +32,32 @@ All <em>classes</em> create <em>objects</em> and all objects therefore contain c
 
 There are two types of attributes in Python:
 
-  - Class attributes
+  - Class Attributes
   - Instance Attributes
+
+### Class Attributes
+
+Class attributes are characteristics which are owned by the class on a universal level. These attributes will be shared by all instances of the class, therefore, they will have the same value for every instance. These attributes are defined outside of all methods in the class.
+
+Let's take a quick look at the ```Meteorologist``` class:
+
+~~~Python
+class Meteorologist:
+    education = "Atmospheric Science"
+
+    def __init__(self,name,age,employer):
+        self.name = name
+        self.age = age
+        self.employer = employer
+~~~
+
+Here, the class attribute ```education``` will always have the value of "Atmospheric Science" for every instance of ```Meteorologist```
+
+### Instance Attributes
+
+Instance attributes are characteristics that are owned by the unique instances of a class. Therefore, for different instances of a class will have different attributes.
+
+In the ```Meteorologist``` class, each instance will have a distinct ```name```, ```age```, and ```employer``` attribute.
 
 ---
 
