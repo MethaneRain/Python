@@ -12,5 +12,5 @@ One description of classes that helped me move beyond the abstract terminology w
 ---
 
 ## Objects
----
+
 All <em>classes</em> create <em>objects</em> and all objects therefore contain characteristics known as <em>attributes</em>.
