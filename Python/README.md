@@ -26,6 +26,12 @@ Objects are copies of the blueprint class, just with actual values. This means a
 
 ---
 
+## Methods
+
+
+
+---
+
 ## Attributes
 
 All <em>classes</em> create <em>objects</em> and all objects therefore contain characteristics known as <em>attributes</em>.
@@ -49,15 +55,22 @@ class Meteorologist:
         self.name = name
         self.age = age
         self.employer = employer
+
+    def description(self):
+        return f"Hi, my name is {self.name} and I'm {self.age} years old and work for {self.employer}!"
 ~~~
 
 Here, the class attribute ```education``` will always have the value of "Atmospheric Science" for every instance of ```Meteorologist```
 
 ### Instance Attributes
 
-Instance attributes are characteristics that are owned by the unique instances of a class. Therefore, for different instances of a class will have different attributes.
+Instance attributes are characteristics that are owned by the unique instances of a class. Therefore, for different instances of a class will have different attributes. The instance attributes also come from any instance methods.
 
-In the ```Meteorologist``` class, each instance will have a distinct ```name```, ```age```, and ```employer``` attribute.
+In the ```Meteorologist``` class, each instance will have a distinct ```name```, ```age```, and ```employer``` attribute. Also, each attribute that comes from the method ```description``` will be unique to an instance.
+
+### Modifying Attributes
+
+
 
 ---
 
