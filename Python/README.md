@@ -1,9 +1,9 @@
 Documenting Python
 ---
 
-Since the majority of my Python experience has been to gain working knowledge, mostly for plotting and data analysis, I have often overlooked the use of classes. I aim to change that and take a step towards becoming a true Python developer, and understanding classes has to be a major point along that journey.
+## Classes
 
----
+Since the majority of my Python experience has been to gain working knowledge, mostly for plotting and data analysis, I have often overlooked the use of classes. I aim to change that and take a step towards becoming a true Python developer, and understanding classes has to be a major point along that journey.
 
 Classes in Python are fairly basic and similar to classes in other languages. I have to admit when I first started learning classes it got a bit overwhelming. Since I really used Python as a data and science language for working with atmospheric science and mostly in Jupyter notebooks, I brute forced everything. I'm hoping to reconsider some projects in the eyes of classes.
 
@@ -13,7 +13,7 @@ Classes are used to create user defined data structures that contain information
 
 ---
 
-## Objects
+## Objects (Instances)
 
 * https://docs.python.org/dev/reference/datamodel.html
 > Objects are Python’s abstraction for data. All data in a Python program is represented by objects or by relations between objects. (In a sense, and in conformance to Von Neumann’s model of a “stored program computer,” code is also represented by objects.)
@@ -29,6 +29,11 @@ Objects are copies of the blueprint class, just with actual values. This means a
 ## Attributes
 
 All <em>classes</em> create <em>objects</em> and all objects therefore contain characteristics known as <em>attributes</em>.
+
+There are two types of attributes in Python:
+
+* 1) Class attributes
+* 2) Instance Attributes
 
 ---
 
