@@ -11,6 +11,23 @@ One description of classes that helped me move beyond the abstract terminology w
 
 Classes are used to create user defined data structures that contain information.
 
+Let's create a new ```class``` called ```Meteorologist```
+
+~~~Python
+class Meteorologist:
+    education = "Atmospheric Science"
+
+    def __init__(self,name,age,employer):
+        self.name = name
+        self.age = age
+        self.employer = employer
+
+    def description(self):
+        return f"Hi, my name is {self.name} and I'm {self.age} years old and work for {self.employer}!"
+~~~
+
+
+
 ---
 
 ## Objects (Instances)
@@ -45,7 +62,7 @@ There are two types of attributes in Python:
 
 Class attributes are characteristics which are owned by the class on a universal level. These attributes will be shared by all instances of the class, therefore, they will have the same value for every instance. These attributes are defined outside of all methods in the class.
 
-Let's take a quick look at the ```Meteorologist``` class:
+Let's take another quick look at the ```Meteorologist``` class:
 
 ~~~Python
 class Meteorologist:
@@ -70,15 +87,61 @@ In the ```Meteorologist``` class, each instance will have a distinct ```name```,
 
 ### Modifying Attributes
 
+Attributes are mutable in Python and therefore, we can change them with the right syntax.
 
-
----
-
-Let's create a new ```class``` called ```Meteorologist```
+Let's add to our ```Meteorologist``` class a bit:
 
 ~~~Python
 class Meteorologist:
-  def __init__(self, name, age):
-    self.name = names
-    self.age = age
+    education = "Atmospheric Science"
+
+    def __init__(self,name,age,employer):
+        self.name = name
+        self.age = age
+        self.employer = employer
+
+    def description(self):
+        return f"Hi, my name is {self.name} and I'm {self.age} years old and work for {self.employer}!"
+
+    def change_employer(self, new_employer):
+        self.employer = new_employer
 ~~~
+
+Now we've added an instance method ```change_employer``` to update the object's employer.
+
+First, let's instantiate the new object ```fred```:
+
+~~~python
+fred = Meteorologist("Fred",42,"UCAR")
+print(fred)
+
+>>>
+<__main__.Meteorologist at 0x1129116a0>
+~~~
+
+Sweet, it successfully instantiated our meteorologist Fred. Now we can grab a description of Fred by calling the instance method ```description```:
+
+~~~Python
+fred.description()
+
+>>>
+"Hi, my name is Fred and I'm 42 years old and work for UCAR!"
+~~~
+
+Great, the instance methods are working correctly too! Let's take it a step further and switch Fred's employer from UCAR to NWS using the other instance method ```change_employer```:
+
+~~~Python
+fred.change_employer("NWS")
+~~~
+
+And once again check his description:
+
+~~~python
+fred.description()
+
+>>>
+"Hi, my name is Fred and I'm 42 years old and work for NWS!"
+~~~
+
+Wonderful, the ```change_empoyer``` method allowed us to change the initial ```employer``` attribute!
+---
