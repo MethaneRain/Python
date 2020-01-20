@@ -13,7 +13,7 @@ import numpy as np
 
 def Cross(data, start, end):
     from metpy.interpolate import cross_section
-  
+    import metpy
     import metpy.calc as mpcalc
    
     import matplotlib.pyplot as plt
@@ -40,13 +40,38 @@ def Cross(data, start, end):
         #                                          dims=specific_humidity.dims,
         #                                          attrs={'units': rh.units})
     
-    cross['u-component_of_wind_isobaric'].metpy.convert_units('knots')
-    cross['v-component_of_wind_isobaric'].metpy.convert_units('knots')
+    u = cross['u-component_of_wind_isobaric'].metpy.convert_units('knots')
+    v = cross['v-component_of_wind_isobaric'].metpy.convert_units('knots')
     cross['t_wind'], cross['n_wind'] = mpcalc.cross_section_components(cross['u-component_of_wind_isobaric'],
                                                                            cross['v-component_of_wind_isobaric'])
-    
+    #wind = metpy.calc.wind_speed(u, v)
+    levels = np.arange(30, 100, 3)
+    #levels = [30:100]
     theta_contour = ax.contour(cross['lon'], cross['isobaric4'], cross['Potential_temperature'][0,:,:],
                                levels=np.arange(250, 850, 3), colors='k', linewidths=2)
+    wind_contour = ax.contour(cross['lon'], cross['isobaric'], 
+            metpy.calc.wind_speed(cross['u-component_of_wind_isobaric'],cross['v-component_of_wind_isobaric'])[0,:,:],
+                               levels=levels, colors='r', linewidths=2)
+    import matplotlib.patheffects as mp
+    for text in plt.clabel(wind_contour, colors='r',fmt='%d'):
+        text.set_path_effects([mp.withStroke(foreground='k',
+                                                       linewidth=3)])
+        #text.set_bbox({'boxstyle': 'sawtooth', 'facecolor': 'none',
+        #               'edgecolor': 'blue'})
+    
+        
+    
+    #cs_opts = {'fmt' : '%d', 'fontsize' : 14,
+    #           'colors' : 'r'}
+    #plt.clabel(wind_contour,**cs_opts)
+    
+    #fmt='%d',weight='bold'
+    #wind_slc_vert = list(range(0, 19, 2)) + list(range(19, 29))
+    #wind_slc_horz = slice(5, 100, 5)
+    #ax.contour(cross['lon'][wind_slc_horz], cross['isobaric'][wind_slc_vert],
+    #     cross['t_wind'][wind_slc_vert, wind_slc_horz],
+    #     cross['n_wind'][wind_slc_vert, wind_slc_horz], color='k')
+    
     
     # Adjust the y-axis to be logarithmic
     #ax.set_yscale('symlog')
@@ -68,15 +93,6 @@ end = (35, -97.0)
 inset = (0.0255, 0.45, 0.43, 0.43)
 extent = [start[1]-5,end[1]+5,start[0]+5,end[0]-5]
 
-print(np.where(data['lon'].values==360+start[1]),np.where(data['lat'].values==end[0]))
-print(np.where(data['lon'].values==360+end[1]),np.where(data['lat'].values==start[0]))
-lon_start_index = np.where(data['lon'].values==360+start[1])
-lon_end_index = np.where(data['lon'].values==360+end[1])
-lat_start_index = np.where(data['lat'].values==start[0])
-lat_end_index = np.where(data['lat'].values==end[0])
-lat_end_index[0][0]
-print("Lat start:",lat_start_index[0][0],"end:",lat_end_index[0][0],
-      "\nLon start:",lon_start_index[0][0],"end:",lon_end_index[0][0])
 
 Cross(data, start, end)
 
