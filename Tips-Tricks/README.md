@@ -54,3 +54,22 @@ A little cool ```markdown``` styling:
 3 day forecasts: updated graphics             |  Combined
 :-------------------------:|:-------------------------:
 ![](https://www.wpc.ncep.noaa.gov/noaa/noaad2.gif)  |  ![](https://raw.githubusercontent.com/MethaneRain/Python-Jupyter/master/Jupyter-Notebooks/Weather-Notebooks/Various%20Weather%20Agency%20Maps/WPC_3_Day%20Forecast_%2017%20November%202019%2011%3A00Z.png)
+
+
+---
+
+Matplotlib Path Effects:
+
+For plotting text, matplotlib has a great formatter called ```patheffects``` that can allow for all types of cool text formatting such as text outline, text boxes, etc.
+
+For example creating a black outline for contour labels:
+
+```python
+import matplotlib.patheffects as mp
+    for text in plt.clabel(wind_contour, colors='r',fmt='%d'):
+        text.set_path_effects([mp.withStroke(foreground='k',
+                                                       linewidth=3)])
+```
+Result image:
+
+<img src="",width='70%'>
