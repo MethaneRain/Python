@@ -72,4 +72,4 @@ import matplotlib.patheffects as mp
 ```
 Result image:
 
-<img src="",width='70%'>
+<img src="https://raw.githubusercontent.com/MethaneRain/Python-Jupyter/master/Tips-Tricks/path_effects_contour_label_example.png">
