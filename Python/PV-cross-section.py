@@ -53,14 +53,16 @@ def Cross(data, start, end):
             metpy.calc.wind_speed(cross['u-component_of_wind_isobaric'],cross['v-component_of_wind_isobaric'])[0,:,:],
                                levels=levels, colors='r', linewidths=2)
     import matplotlib.patheffects as mp
-    for text in plt.clabel(wind_contour, colors='r',fmt='%d'):
-        text.set_path_effects([mp.withStroke(foreground='k',
-                                                       linewidth=3)])
+    #for text in plt.clabel(wind_contour, colors='r',fmt='%d'):
+    #    text.set_path_effects([mp.withStroke(foreground='k',
+    #                                                   linewidth=3)])
         #text.set_bbox({'boxstyle': 'sawtooth', 'facecolor': 'none',
         #               'edgecolor': 'blue'})
     
         
-    
+    clabel = plt.clabel(wind_contour, colors='r',fmt='%d')
+    clabel.set_path_effects([mp.withStroke(foreground='k',
+                                                       linewidth=3)])
     #cs_opts = {'fmt' : '%d', 'fontsize' : 14,
     #           'colors' : 'r'}
     #plt.clabel(wind_contour,**cs_opts)
