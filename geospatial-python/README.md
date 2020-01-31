@@ -10,8 +10,6 @@ There are two ways of storing goespatial data in a file:
 
 * Raster - rows and columns with pixels 
 
-and
-
 * Vector - points, lines, and polygons
 
 <strong><em>Raster</em></strong>
