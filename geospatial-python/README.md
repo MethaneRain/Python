@@ -14,3 +14,8 @@ There are two ways of storing geospatial data in a file:
 
 <strong><em>Raster</em></strong>
 
+
+---
+
+## Examples
+
