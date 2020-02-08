@@ -1,4 +1,4 @@
-Documenting Python
+Crash course into classes, methods, and attributes
 ---
 
 ## Classes
