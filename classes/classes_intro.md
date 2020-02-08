@@ -1,4 +1,4 @@
-Crash course into classes, methods, and attributes
+Crash course into classes, methods, and attributes 
 ---
 
 ## Classes
