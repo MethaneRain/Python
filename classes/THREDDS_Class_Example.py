@@ -310,6 +310,29 @@ class THREDDS_Models:
                  filename_var,
                  contourfill=True,
                  cmap=None):
+        '''
+        Plotting method for the THREDDS model data!
+        -------------------------------------------
+        
+        Arguments:
+            * data - variable data to plot ie mslp
+            * time_index - time step index for variable ie 0,1,2, etc.
+            * lats/lons - latitude and longitude variable from dataset
+            * time_strings - ...
+            * time_final - ...
+            * font - dictionary fo font attributes for plots and labels
+            * model - string name of weather model, used for title and filename
+            * variable - string name of variable plotting, used for title
+            * title_prod - string value of dataset long name of variable
+            * filename_var - string value for variable used for filename
+            * contour_fill - plots filled contours when assigned True
+            * cmap - provides colormap when not None
+            
+        -------------------------------------------
+        There is still a lot to be done in commenting and cleaning up this method.
+        Please stay tuned! 
+        Love, Justin Richling Jr. the III
+        '''
         import cartopy.crs as ccrs
         import matplotlib.pyplot as plt
         from metpy.plots import add_metpy_logo
