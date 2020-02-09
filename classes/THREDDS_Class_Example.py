@@ -191,6 +191,10 @@ class THREDDS_Models:
         Queue data from given datasets
         ------------------------------
         
+        Returns:
+            * Data
+            * String value for model name
+            * String value for use in plot title
         
         '''
        
