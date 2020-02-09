@@ -371,7 +371,7 @@ class THREDDS_Models:
         if model == "NAM":
             time_step = time_index*3
             
-
+        print(time_step)
         # Set string for saved image file name
         file_time = str(time_final[0]).replace("-","_").replace(" ","_").replace(":","")[:-2]+"Z"
 
