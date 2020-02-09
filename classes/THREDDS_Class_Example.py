@@ -418,20 +418,34 @@ class THREDDS_Models:
 
                                             # Variable Plot
     #---------------------------------------------------------------------------------------------------
-       
         if contourfill == True:
-        
-            cs2 = ax.contourf(lons, lats, data[time_index,:,:], self.clevs, cmap=cmap,
-                      transform=datacrs)
+            if data.ndim ==4:
+                
+                cs2 = ax.contourf(lons, lats, data[time_index,1,:,:], self.clevs, cmap=cmap,
+                          transform=datacrs)
+                
+                cbaxes = fig.add_axes(colorbar_axis) # [left, bottom, width, height]
+    
+                plt.colorbar(cs2, orientation='horizontal',cax=cbaxes)
             
-            cbaxes = fig.add_axes(colorbar_axis) # [left, bottom, width, height]
-
-            plt.colorbar(cs2, orientation='horizontal',cax=cbaxes)
+            if data.ndim == 3:
+                cs2 = ax.contourf(lons, lats, data[time_index,:,:], self.clevs, cmap=cmap,
+                          transform=datacrs)
+                
+                cbaxes = fig.add_axes(colorbar_axis) # [left, bottom, width, height]
+    
+                plt.colorbar(cs2, orientation='horizontal',cax=cbaxes)
             
         if contourfill == False:
-            cs2 = ax.contour(lons, lats, data[time_index,:,:], self.clevs, colors=self.colors,
+            if data.ndim ==4:
+                cs2 = ax.contour(lons, lats, data[time_index,1,:,:], self.clevs, colors=self.colors,
                       transform=datacrs)
-            plt.clabel(cs2, **kw_clabels)
+                plt.clabel(cs2, **kw_clabels)
+            
+            if data.ndim == 3:
+                cs2 = ax.contour(lons, lats, data[time_index,:,:], self.clevs, colors=self.colors,
+                      transform=datacrs)
+                plt.clabel(cs2, **kw_clabels)
 
                                             # Save Figure
     #---------------------------------------------------------------------------------------------------    
