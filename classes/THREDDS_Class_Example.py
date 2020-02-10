@@ -200,7 +200,6 @@ class THREDDS_Models:
         
         Returns:
             * Data
-        
         '''
         
         from datetime import datetime, timedelta
@@ -321,9 +320,12 @@ class THREDDS_Models:
         time_var = num2date(time_var[:], time_var.units).tolist()
         time_strings = [t.strftime('%m/%d %H:%M') for t in time_var]
 
+        self.time_strings = time_strings
+        
         time_var = data.variables[find_time_var(data.variables[self.arg])]
         time_final = num2date(time_var[:].squeeze(), time_var.units)
-        return time_strings,time_var,time_final 
+        
+        return time_var,time_final 
     
     
     def change_map_attrs(self,extent,cmap=None,clevs=None,colors=None):
@@ -331,6 +333,7 @@ class THREDDS_Models:
         self.clevs = clevs
         self.colors = colors
         self.extent = extent
+        print(extent)
         
     
     def make_map(self,data,time_index,lats,lons,font,
@@ -395,6 +398,7 @@ class THREDDS_Models:
         ax = plt.subplot(111, projection=plotcrs)
 
     # Set extent and plot map lines
+        print(self.extent)
         ax.set_extent(self.extent, datacrs)
 
         ax.coastlines(resolution='50m')
