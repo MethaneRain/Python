@@ -186,18 +186,22 @@ class THREDDS_Models:
         catalog = cat_1+cat_2
         webbrowser.open(catalog)
     
-    def get_model_data(self,init_hour,model,prod,*argv):
+    def get_model_data(self,init_hour,model,prod,*argv,latlon=None):
         '''
         Queue data from given datasets
         ------------------------------
+        Arguments:
+            * init_hour
+            * model
+            * prod
+            * args - felxible number of plotting variables
+            * latlon (optional) - [west,east,south,north]
+                defaults to north=60, south=20, east=310, west=230
         
         Returns:
             * Data
-            * String value for model name
-            * String value for use in plot title
         
         '''
-       
         
         from datetime import datetime, timedelta
         
@@ -242,6 +246,14 @@ class THREDDS_Models:
         
         catalog = TDSCatalog(cat_1+cat_2)
         
+        file_time_string = str(catalog)[-19:-6]
+        file_time = f"{file_time_string[0:4]}_{file_time_string[4:6]}_{file_time_string[6:8]}_{file_time_string[9:13]}Z"
+        init_date = file_time[0:-6].replace("_","-")
+        init_hour = f"{file_time_string[9:11]}:{file_time_string[11:13]}Z"
+       
+        self.file_time = file_time
+        self.init_date = init_date
+        self.init_hour = init_hour
      
         dataset = list(catalog.datasets.values())[0]
         
@@ -258,7 +270,21 @@ class THREDDS_Models:
         
         query = ncss.query()
         query.time_range(now, end)
-        query.lonlat_box(north=60, south=20, east=310, west=230)
+        
+        if latlon != None:
+            north = latlon[3]
+            south = latlon[2]
+            east = latlon[1]
+            west = latlon[0]
+        else:
+            north = 60
+            south = 20
+            east = 310
+            west = 230
+            
+        print(north,south,east,west)
+        query.lonlat_box(north=north, south=south, east=east, west=west)
+        #query.lonlat_box(north=60, south=20, east=310, west=230)
         query.accept('netcdf4')
         
         for i in var_list:
@@ -270,7 +296,9 @@ class THREDDS_Models:
         print("Data grab complete!")
        
         self.arg = arg
-        return data, model, model_filename_prod_dict[model][prod]
+        self.model = model
+        self.title_prod = model_filename_prod_dict[model][prod]
+        return data
 
     def get_time(self,data):
         '''
@@ -305,11 +333,12 @@ class THREDDS_Models:
         self.extent = extent
         
     
-    def make_map(self,data,time_index,lats,lons,time_strings,time_final,font,
-                 model,variable,title_prod,
+    def make_map(self,data,time_index,lats,lons,font,
+                 variable,
                  filename_var,
                  contourfill=True,
-                 cmap=None):
+                 cmap=None,
+                 level=None):
         '''
         Plotting method for the THREDDS model data!
         -------------------------------------------
@@ -385,34 +414,31 @@ class THREDDS_Models:
                                           # File and Title Times
     #---------------------------------------------------------------------------------------------------
        
-        if model == "RAP":
+        
+        if self.model == "RAP":
             time_step = time_index
             
-        if model == "GFS":
+        if self.model == "GFS":
             time_step = time_index*3
             
-        if model == "NAM":
+        if self.model == "NAM":
             time_step = time_index*3
             
-        print(time_step)
-        # Set string for saved image file name
-        file_time = str(time_final[0]).replace("-","_").replace(" ","_").replace(":","")[:-2]+"Z"
-
+        if self.model == "GEFS":
+            time_step = time_index*6
+            
         # Set forecast date and hour  
-        forecast_date = "{}".format(self.today_year)+'-'+time_strings[time_index].replace("/","-")[:-5]
-        forecast_hour = time_strings[time_index][-5:]+"Z"
-
-        # Set initialization date and hour 
-        init_date = "{}".format(self.today_year)+'-'+time_strings[0].replace("/","-")[:-5]
-        init_hour = time_strings[0].replace("/","-")[-5:]+"Z"
-
+        forecast_date = "{}".format(self.today_year)+'-'+self.time_strings[time_index].replace("/","-")[:-5]
+        forecast_hour = self.time_strings[time_index][-5:]+"Z"
+        
+        print(self.time_strings[0])
 
                                             # Plot Title
     #---------------------------------------------------------------------------------------------------
     
-        ax.set_title(f'{model}: {title_prod.replace("_"," ")}\n{variable}', size=16, loc='left',fontdict=font)
+        ax.set_title(f'{self.model}: {self.title_prod.replace("_"," ")}\n{variable}', size=16, loc='left',fontdict=font)
         
-        ax.set_title(f"Init Hour: {init_date} {init_hour}\nForecast Hour: F{time_step:02d} {forecast_date} {forecast_hour}",
+        ax.set_title(f"Init Hour: {self.init_date} {self.init_hour}\nForecast Hour: F{time_step:02d} {forecast_date}{forecast_hour}",
                      size=16, loc='right',fontdict=font)
 
 
@@ -421,7 +447,7 @@ class THREDDS_Models:
         if contourfill == True:
             if data.ndim ==4:
                 
-                cs2 = ax.contourf(lons, lats, data[time_index,1,:,:], self.clevs, cmap=cmap,
+                cs2 = ax.contourf(lons, lats, data[time_index,level,:,:], self.clevs, cmap=cmap,
                           transform=datacrs)
                 
                 cbaxes = fig.add_axes(colorbar_axis) # [left, bottom, width, height]
@@ -438,7 +464,7 @@ class THREDDS_Models:
             
         if contourfill == False:
             if data.ndim ==4:
-                cs2 = ax.contour(lons, lats, data[time_index,1,:,:], self.clevs, colors=self.colors,
+                cs2 = ax.contour(lons, lats, data[time_index,level,:,:], self.clevs, colors=self.colors,
                       transform=datacrs)
                 plt.clabel(cs2, **kw_clabels)
             
@@ -450,7 +476,7 @@ class THREDDS_Models:
                                             # Save Figure
     #---------------------------------------------------------------------------------------------------    
      
-        outfile = f"{model}_{title_prod}_{filename_var}_{file_time}_F{time_step:02d}.png"
+        outfile = f"{self.model}_{self.title_prod}_{filename_var}_{self.file_time}_F{time_step:02d}.png"
         fig.savefig(self.im_save_path+outfile,bbox_inches='tight',dpi=120)
         
         plt.show()
