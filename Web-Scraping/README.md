@@ -1,8 +1,8 @@
-## My first attempt at web scraping!!
+# My first attempt at web scraping!!
 
 ---
 
-## Get the most current GFS weather model data Grib file.
+### Get the most current GFS weather model data Grib file.
 
 ~~~Python
 
@@ -45,7 +45,7 @@ GFS_Global_0p25deg_20200129_1200.grib2
 
 ---
 
-## Grabbing text from University of Wyoming Upper Air
+### Grabbing text from University of Wyoming Upper Air
 
 Since UWyo radiosonde data is only text (no file to download) the approach is slightly different than actuall scraping a file like ```csv``` or ```grib``` file.
 
@@ -63,7 +63,7 @@ http://weather.uwyo.edu/cgi-bin/sounding?region=naconf&TYPE=TEXT%3ALIST&YEAR=202
 
 ---
 
-## Gathering SPC's storm report ```csv``` files
+### Gathering SPC's storm report ```csv``` files
 
 * Filtered Tornado Reports:
 
