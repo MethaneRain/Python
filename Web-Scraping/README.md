@@ -50,7 +50,12 @@ Since UWyo radiosonde data is only text (no file to download) the approach is sl
 
 The stations and date options can be found at: http://weather.uwyo.edu/upperair/sounding.html
 
+The url will lead to just text and can be altered by station which is a number used for the city/station. The other url arguments are: year, month, starting day, ending day, starting hour and ending hour with hour only being eith 00 or 12Z. 
 
+Note, the option ofr TYOE could be raw, unmergerd or list text.
+
+Sample url for March 27th, 2020 12Z for Denver (station num 72469):
+http://weather.uwyo.edu/cgi-bin/sounding?region=naconf&TYPE=TEXT%3ALIST&YEAR=2020&MONTH=03&FROM=2712&TO=2712&STNM=72469
 
 
 ---
