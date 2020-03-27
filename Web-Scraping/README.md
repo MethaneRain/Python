@@ -43,7 +43,13 @@ ls *.grib2
 GFS_Global_0p25deg_20200129_1200.grib2
 ~~~
 
----
+
+Grabbing text from University of Wyoming Upper Air
+
+Since UWyo radiosonde data is only text (no file to download) the approach is slightly different than actuall scraping a file like ```csv``` or ```grib``` file.
+
+The stations and date options can be found at: http://weather.uwyo.edu/upperair/sounding.html
+
 
 
 
