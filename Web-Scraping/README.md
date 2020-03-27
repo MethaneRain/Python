@@ -2,7 +2,7 @@
 
 ### I really wanted to be able to directly download a file (and also get certain data from the file) from the website via Python.
 
-#### For example, I wanted to get the most current weather model data initialization hour of the most current data file in the THREDDS sever.
+## Get the most current GFS weather model data initialization hour of the most current data file in the THREDDS sever.
 
 ~~~Python
 
