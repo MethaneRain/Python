@@ -2,7 +2,7 @@
 
 ---
 
-## Get the most current GFS weather model data initialization hour of the most current data file in the THREDDS sever.
+## Get the most current GFS weather model data Grib file.
 
 ~~~Python
 
