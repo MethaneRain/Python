@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[7]:
-
-
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
