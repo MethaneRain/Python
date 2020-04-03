@@ -22,7 +22,7 @@ import geopandas
 shp = 'someshapefile.shp'
 geopandas.read_file(shp)
 ```
-<img src="https://raw.githubusercontent.com/MethaneRain/Python/master/geospatial-python/shapefiles/geopandas_shapefile.png" width="70%">
+<img src="https://raw.githubusercontent.com/MethaneRain/Python/master/geospatial-python/shapefiles/geopandas_shapefile.png" width="100%">
 
 <li>Folium</li>
 
