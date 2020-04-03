@@ -10,8 +10,8 @@ There are very usefual ways of working with shapefles in Python and below are so
 <ol>
 <lil>Cartopy</li>
 from cartopy.io.shapereader import Reader
-Cartopy's builtin ```io.shapereader``` has a method ```Reader``` that can read common shapefiles
-Cartopy has a method in it's ```feature``` call: ```cartopy.feature -> ShapelyFeature```
+Cartopy's builtin io.shapereader has a method Reader that can read common shapefiles
+Cartopy has a method in it's feature call: cartopy.feature -> ShapelyFeature
 
 ShapelyFeature allows for basic use of shapefiles in plotting
 
