@@ -12,16 +12,16 @@ ds = nc.Dataset("test.nc","w",format="NETCDF4")
 #### Defining the axis size by name
 
 ```python
-lons = np.arange(0,360,2.5) # This will give 144 longitudes, every 2.5 degrees
-lats = np.arange(-90,92.5,2.5) # This will give 73 latitudes, every 2.5 degrees
+lon_vals = np.arange(0,360,2.5) # This will give 144 longitudes, every 2.5 degrees
+lats_vals = np.arange(-90,92.5,2.5) # This will give 73 latitudes, every 2.5 degrees
 ```
 
 Now the length of the lats/lons can be used to create the dimension size
 
 ```python
 # The first argument (lat/lon) will be the reference name used later in the creation of the variables
-ds.createDimension('lat', len(lats))
-ds.createDimension('lon', len(lons))
+ds.createDimension('lat', len(lat_vals))
+ds.createDimension('lon', len(lons_vals))
 ```
 
 #### Creating the variable axes
@@ -60,5 +60,26 @@ press.standard_name = 'pressure'
 press.long_name = 'Made-Up Pressure'
 press.units = 'hPa'
 ```
+We can arbitrarily assign values to the pressure array. It must be 2d since it will take a value at every lat/lon pairing. One way to accomplish this quickly is to use ```numpy.arange()```:
+
+```python
+pres_vals = np.arange(73*144).reshape(73,144)
+pres_vals.shape
+
+>>>
+(73, 144)
+```
+
+This will just make a set of numbers from 0 to 73*144 and fill them accordingly 
 
 In the variable creation above there will be lat and lon variables that are 1d each and a press variable that will be 2d (73,144)
+
+#### Assigning the values to the new variables
+
+The only thing left to do is just assign the varibales lat, lon, and press to their values:
+
+```python
+lon[:] = lon_vals
+lat[:] = lat_vals
+press[:] = pres__vals
+```
