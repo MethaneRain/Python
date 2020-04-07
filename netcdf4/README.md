@@ -2,6 +2,7 @@
 
 ```python
 import netcdf4 as nc
+import numpy as np
 
 ds = nc.Dataset("test.nc","w",format="NETCDF4")
 ```
