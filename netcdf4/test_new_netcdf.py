@@ -10,7 +10,7 @@ Created on Wed Apr  8 00:11:32 2020
 #-----------------------------------------------------------------------------#
 import netCDF4 as nc
 import numpy as np
-new_ds = nc.Dataset("test.nc")
+new_ds = nc.Dataset("test.nc","r")
 
 print(list(new_ds.variables))
 
