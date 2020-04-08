@@ -5,7 +5,7 @@ Created on Tue Apr  7 23:55:33 2020
 
 @author: chowdahead
 """
-import netcdf4 as nc
+import netCDF4 as nc
 import numpy as np
 from numpy import dtype
 
