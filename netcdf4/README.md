@@ -3,7 +3,7 @@
 ## Reading ```nc``` files
 
 ```python
-import netcdf4 as nc
+import netCDF4 as nc
 import numpy as np
 
 ds = nc.Dataset("test.nc","r")
