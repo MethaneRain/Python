@@ -77,10 +77,16 @@ In the variable creation above there will be lat and lon variables that are 1d e
 
 #### Assigning the values to the new variables
 
-The only thing left to do is just assign the varibales lat, lon, and press to their values:
+The next thing to do is simply assign the varibales lat, lon, and press to their values:
 
 ```python
 lon[:] = lon_vals
 lat[:] = lat_vals
 press[:] = pres_vals
+```
+
+##### Close the file and you're done!
+
+```python
+ds.close()
 ```
