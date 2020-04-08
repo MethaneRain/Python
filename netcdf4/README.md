@@ -85,7 +85,7 @@ lat[:] = lat_vals
 press[:] = pres_vals
 ```
 
-##### Close the file and you're done!
+#### Close the file and you're done!
 
 ```python
 ds.close()
