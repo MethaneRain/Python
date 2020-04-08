@@ -1,14 +1,22 @@
 ## Using Python's NetCDF4 Package
 
+## Reading ```nc``` files
+
+```python
+import netcdf4 as nc
+import numpy as np
+
+ds = nc.Dataset("test.nc","r")
+```
+
+## Creating a new ```nc``` file
+
 ```python
 import netcdf4 as nc
 import numpy as np
 
 ds = nc.Dataset("test.nc","w",format="NETCDF4")
 ```
-
-### Creating a new ```nc``` file
----
 
 #### Defining the axis size by name
 
@@ -90,3 +98,7 @@ press[:] = pres_vals
 ```python
 ds.close()
 ```
+
+---
+
+##
