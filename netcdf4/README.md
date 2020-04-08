@@ -14,7 +14,7 @@ ds = nc.Dataset("test.nc","r")
 ## Creating a new ```nc``` file
 
 ```python
-import netcdf4 as nc
+import netCDF4 as nc
 import numpy as np
 
 ds = nc.Dataset("test.nc","w",format="NETCDF4")
@@ -37,7 +37,7 @@ ds.createDimension('lon', len(lon_vals))
 
 #### Creating the variable axes
 
-The netcdf4 method ```createVariable``` takes necessary arguments:
+The netCDF4 method ```createVariable``` takes necessary arguments:
 * Name - first arg
 * Data Type - second arg
 * Dimension Name - third arg (must match the name given in the ```createDimension``` call above)
