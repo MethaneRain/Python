@@ -82,5 +82,5 @@ The only thing left to do is just assign the varibales lat, lon, and press to th
 ```python
 lon[:] = lon_vals
 lat[:] = lat_vals
-press[:] = pres__vals
+press[:] = pres_vals
 ```
