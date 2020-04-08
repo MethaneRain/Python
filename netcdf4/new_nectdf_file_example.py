@@ -35,3 +35,19 @@ press = ds.createVariable('pres', dtype('double').char, ('lat', 'lon'))
 press.standard_name = 'pressure'
 press.long_name = 'Made-Up Pressure'
 press.units = 'hPa'
+
+pres_vals = np.arange(73*144).reshape(73,144)
+print(pres_vals.shape)
+
+lon[:] = lon_vals
+lat[:] = lat_vals
+press[:] = pres_vals
+
+ds.close()
+
+
+
+
+
+
+
