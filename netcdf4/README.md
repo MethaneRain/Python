@@ -14,7 +14,7 @@ ds = nc.Dataset("test.nc","w",format="NETCDF4")
 
 ```python
 lon_vals = np.arange(0,360,2.5) # This will give 144 longitudes, every 2.5 degrees
-lats_vals = np.arange(-90,92.5,2.5) # This will give 73 latitudes, every 2.5 degrees
+lat_vals = np.arange(-90,92.5,2.5) # This will give 73 latitudes, every 2.5 degrees
 ```
 
 Now the length of the lats/lons can be used to create the dimension size
@@ -22,7 +22,7 @@ Now the length of the lats/lons can be used to create the dimension size
 ```python
 # The first argument (lat/lon) will be the reference name used later in the creation of the variables
 ds.createDimension('lat', len(lat_vals))
-ds.createDimension('lon', len(lons_vals))
+ds.createDimension('lon', len(lon_vals))
 ```
 
 #### Creating the variable axes
