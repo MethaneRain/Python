@@ -9,6 +9,8 @@ import numpy as np
 ds = nc.Dataset("test.nc","r")
 ```
 
+---
+
 ## Creating a new ```nc``` file
 
 ```python
