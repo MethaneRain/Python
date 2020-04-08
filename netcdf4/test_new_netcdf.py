@@ -41,12 +41,9 @@ state_boundaries = cfeature.NaturalEarthFeature(category='cultural',
 press = new_ds.variables['pres'][:]
 Lon = new_ds.variables['lons'][:]
 Lat = new_ds.variables['lats'][:]
-
-  
     
 fig=plt.figure(figsize=(20,20))
-    
-    
+      
 ax = fig.add_subplot(1, 1, 1, projection=plotcrs) 
    
 ax.coastlines('10m', color='black',alpha=0.5)
@@ -54,15 +51,10 @@ ax.add_feature(state_boundaries, edgecolor='black',alpha=0.5)
 ax.add_feature(cfeature.LAKES,alpha=0.5)
 ax.set_extent(extent, datacrs)
     
-    
-
 levels = np.arange(6000,8500,25)
-    
-  
     
 hgt_contourfill=ax.contourf(Lon,Lat,press,levels, 
                     cmap=plt.cm.jet,transform=datacrs,alpha=0.6)
-
 
 cb = plt.colorbar(hgt_contourfill,pad=0.02, shrink=0.45) # cax = cbaxes
 cb.ax.tick_params(labelsize=15)
