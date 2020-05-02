@@ -321,3 +321,12 @@ rs.stations
  'VWX': Station(id='VWX', elevation=190.0, latitude=38.27, longitude=-87.72, name='EVANSVILLE/Owensville'),
  'YUX': Station(id='YUX', elevation=53.0, latitude=32.48, longitude=-114.65, name='PHOENIX/Yuma')}
 ```
+
+##### Calling specific station, ie Denver (FTG)
+
+```python
+rs.stations["FTG"]
+
+Station(id='FTG', elevation=1675.0, latitude=39.78, longitude=-104.53, name='DENVER/BOULDER/Denver')
+```
+
