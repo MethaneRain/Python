@@ -2,13 +2,33 @@ Working with Radar data from Unidata's THREDDS server
 
 ---
 
-### Getting Level III data
+## For the non-archived data, Level II and III data can be accessed for maybe a week(??) from the current date
 
-Example: 
+* Imports
+
 ```python
 from siphon.cdmr import Dataset
 from siphon.radarserver import get_radarserver_datasets, RadarServer
 ```
+
+* Get a ist of available datasets 
+
+```python
+ds = get_radarserver_datasets('http://thredds.ucar.edu/thredds/')
+print(list(ds))
+
+['NEXRAD Level II Radar for Case Study CCS039', 
+'NEXRAD Level II Radar from IDD', 
+'NEXRAD Level III Radar for Case Study CCS039', 
+'NEXRAD Level III Radar from IDD', 
+'TDWR Level III Radar from IDD']
+```
+
+
+
+### Getting Level III data
+
+Example: Base Velocity for Denver/Boulder
 
 ```python
 ds = get_radarserver_datasets('http://thredds.ucar.edu/thredds/')
