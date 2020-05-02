@@ -26,7 +26,7 @@ print(list(ds))
 
 
 
-### Getting Level III data
+### Getting Level III metadata
 
 Example: Base Velocity for Denver/Boulder
 
@@ -144,5 +144,12 @@ data.summary
 ```
 
 
+---
 
+### Looking at the data?
 
+```python
+
+cat = TDSCatalog("http://thredds.ucar.edu/thredds/radarServer/catalog.xml")
+rs = RadarServer(cat.catalog_refs['NEXRAD Level III Radar from IDD'].href)
+rs.metadata["documentation"]
