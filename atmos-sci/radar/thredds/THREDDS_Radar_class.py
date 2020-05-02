@@ -19,6 +19,7 @@ class THREDDS_Radar:
         print(end)
         filetime = "{0:%Y_%m_%d_%H%MZ}".format(end)
         query_cat = rs.get_catalog(query)
+        
         data = query_cat.datasets[0].remote_access()
         
     
