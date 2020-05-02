@@ -14,7 +14,11 @@ from siphon.radarserver import get_radarserver_datasets, RadarServer
 ds = get_radarserver_datasets('http://thredds.ucar.edu/thredds/')
 print(list(ds))
 
-['NEXRAD Level II Radar for Case Study CCS039', 'NEXRAD Level II Radar from IDD', 'NEXRAD Level III Radar for Case Study CCS039', 'NEXRAD Level III Radar from IDD', 'TDWR Level III Radar from IDD']
+['NEXRAD Level II Radar for Case Study CCS039', 
+'NEXRAD Level II Radar from IDD', 
+'NEXRAD Level III Radar for Case Study CCS039', 
+'NEXRAD Level III Radar from IDD', 
+'TDWR Level III Radar from IDD']
 ```
 
 ```python
