@@ -16,7 +16,6 @@ import matplotlib.pyplot as plt
 
 import metpy
 from metpy.plots import ctables
-import pandas as pd
 from matplotlib import patheffects
 #reflec_norm, reflec_cmap = ctables.registry.get_with_steps('NWSReflectivity', 5, 5)
 reflec_norm, reflec_cmap = ctables.registry.get_with_steps('NWSStormClearReflectivity',-20., 0.5)
