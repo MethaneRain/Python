@@ -7,7 +7,7 @@ Created on Sat May  2 22:26:03 2020
 """
 
 def make_map(data,LatLonBox):  
-    import cartopy.ccrs as crs
+    import cartopy.crs as crs
     import cartopy.feature as cfeature
     import cartopy.io.shapereader as shpreader
     import matplotlib.pyplot as plt
@@ -40,6 +40,6 @@ def make_map(data,LatLonBox):
     ax.add_feature(land, zorder=-1)
     ax.set_facecolor('black')
     
-    ax.set_extent(LatLonBox,cfeature.PlateCarree())
+    ax.set_extent(LatLonBox,crs.PlateCarree())
     
     return fig,ax,proj

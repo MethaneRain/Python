@@ -23,4 +23,7 @@ def get_radar_data(rs,station,product,dataset_name,start,end):
     x = range_data*np.sin(np.deg2rad(azimuth_data))[:,None]
     y = range_data*np.cos(np.deg2rad(azimuth_data))[:,None]
     
-    return data,range_data,azimuth_data,radar_data,x,y,filetime
+    LatLonBox = [rs.stations[station].longitude-3,rs.stations[station].longitude+3,
+                 rs.stations[station].latitude-2,rs.stations[station].latitude+2]
+    
+    return data,range_data,azimuth_data,radar_data,x,y,filetime,LatLonBox
