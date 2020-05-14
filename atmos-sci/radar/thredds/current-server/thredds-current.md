@@ -2,7 +2,7 @@ THREDDS current data, only available for roughly a week
 
 ---
 
-## For the non-archived data, Level II and III data can be accessed for maybe a week(??) from the current date
+## For the non-archived data, Level II and III data can be accessed for maybe a month from the current date
 
 * Imports
 
