@@ -446,7 +446,7 @@ def example():
     ------------
     Run example
     ------------
-    Function to run a quick plot for reflectivity using most current time
+    Function to run a quick plot for reflectivity using most current time from Level III dataset
     """
     print("\n\nHere is some information on the example data:")
     station = "FTG"
