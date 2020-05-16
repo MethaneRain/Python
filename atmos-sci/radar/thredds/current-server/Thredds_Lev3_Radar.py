@@ -219,7 +219,7 @@ def get_radar_data(file_list,index=0):
     title_time = "{0:%d %b %Y %H%MZ}".format(date_time_obj)
     file_time = "{0:%Y_%m_%d_%H%MZ}".format(date_time_obj)
     print(f"title time: {title_time}\nfilename time: {file_time} \n")
-    print(f"\nFull data printout: \n---------------------------------\n  {data}")
+    print(f"\nFull Data Printout: \n---------------------------------\n  {data}")
     return data, title_time, file_time
 
 def get_prod_name(product):
