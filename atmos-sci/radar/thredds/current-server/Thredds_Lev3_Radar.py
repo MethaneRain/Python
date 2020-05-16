@@ -162,15 +162,15 @@ def query_radar_data(data_set,station,product,start,
     end = start+timedelta(days=day_delta, minutes=minute_delta, hours=hour_delta)
     
 
-    print(f"query start time:{start}")
-    print(f"query end time:{end} \n")
+    print(f"\nQueried Time Range:\n------------------------------\nquery start time: {start}")
+    print(f"query end time: {end} \n")
     ds = get_radarserver_datasets('http://thredds.ucar.edu/thredds/')
     
     dataset = str(ds[3])[:22]
 
     url = ds[data_set].follow().catalog_url
     rs = RadarServer(url)
-    print(rs.stations[station])
+    print(f"\nStation (FTG: Denver) info: \n--------------------------\n{rs.stations[station]}\n")
 
     query = rs.query()
     query.stations(station).time_range(start,end).variables(product)
@@ -178,7 +178,7 @@ def query_radar_data(data_set,station,product,start,
 
     ds[data_set].follow().catalog_url
     file_list = list(catalog.datasets.values())
-    for t in file_list: print(t)
+    for t in file_list: print(f"\nList of Queried Files:\n---------------------------------\n{t}\n")
     LatLonBox = [rs.stations[station].longitude-3,rs.stations[station].longitude+3,
                  rs.stations[station].latitude-2,rs.stations[station].latitude+2]
     
@@ -209,14 +209,15 @@ def get_radar_data(file_list,index=0):
 
     radar_time = ((data.time_coverage_start).replace('T',' ')).replace('Z','')
     date_time_obj = datetime.strptime(radar_time, '%Y-%m-%d %H:%M:%S')
-
+    
+    print("\nFile Time Info\n--------------------------------")
     print('Date:', date_time_obj.date())
     print('Time:', date_time_obj.time())
     print('Date-time:', date_time_obj)
     title_time = "{0:%d %b %Y %H%MZ}".format(date_time_obj)
     file_time = "{0:%Y_%m_%d_%H%MZ}".format(date_time_obj)
-    print(f"title time:{title_time}","\n",f"filename time:{file_time} \n")
-    print(f"Full data printout: \n {data}")
+    print(f"title time: {title_time}\nfilename time: {file_time} \n")
+    print(f"\nFull data printout: \n---------------------------------\n  {data}")
     return data, title_time, file_time
 
 def get_prod_name(product):
