@@ -5,8 +5,8 @@
 # Date 2020 May 16
 
 
-print("This library only plots Base Reflectivity and Radial Velocity"+"\n"+
-     "Many other products are available in the data!"+"\n")
+print("This library only plots Base Reflectivity and Radial Velocity\n"+
+     "Many other products are available in the data!\n")
 
 from datetime import datetime, timedelta
 import cartopy.feature as cfeature
