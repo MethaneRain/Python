@@ -20,7 +20,7 @@ import pandas as pd
 from siphon.cdmr import Dataset
 from siphon.radarserver import get_radarserver_datasets, RadarServer
 
-print("THREDDS avaliable dataset names:\n------------------------------")
+print("Avaliable THREDDS Dataset Names:\n------------------------------")
 for prod in get_radarserver_datasets('http://thredds.ucar.edu/thredds/'): print(prod)
 
 rad_vel = pd.read_csv("/Users/chowdahead/Documents/radial_velocity_cmap.csv")
