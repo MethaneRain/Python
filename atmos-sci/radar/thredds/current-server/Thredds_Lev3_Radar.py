@@ -362,7 +362,7 @@ def get_product_cbar_args(prod_name,ax,cbar,outline_effect):
         cbar.ax.text(ele, Y, ticks[count], ha='center', va='center',path_effects=outline_effect,color="w",fontsize=6)
     
 
-def radar_plot(station,save_path,product,start,file_list,dataset,LatLonBox,index=0):
+def radar_plot(station,save_path,product,start,file_list,dataset,LatLonBox,show=False,index=0):
     
     """
     -------------------
@@ -432,9 +432,11 @@ def radar_plot(station,save_path,product,start,file_list,dataset,LatLonBox,index
     make_text_time_left(ax,station, prod_name,product)
     
     plt.savefig(f"{save_path+station}_RadarL3_{prod_name}thredds_{file_time}.png",bbox_inches="tight",dpi=200)
-    #plt.savefig(save_path+station+"_RadarL3_"+prod_name+"_thredds_"+file_time+".png",bbox_inches="tight",dpi=200)
-    #plt.close(fig)    
-    plt.show()                            
+    #plt.close(fig)  
+    if show == True:
+        plt.show()  
+    else:
+        plt.close(fig)                          
 
 
 def example():
@@ -445,6 +447,7 @@ def example():
     ------------
     Function to run a quick plot for reflectivity using most current time
     """
+    print("\n\nHere is some information on the example data:")
     station = "FTG"
     product = 'N0V'
     #start = datetime(Year,Month,Day,Hour,Minute)
@@ -453,7 +456,7 @@ def example():
     file_list,dataset,LatLonBox = query_radar_data('NEXRAD Level III Radar from IDD',station,product,start,
                                           minute_delta=0,hour_delta=0,day_delta=0)
 
-    radar_plot(station,save_path,product,start,file_list,dataset,LatLonBox,index=0)
+    radar_plot(station,save_path,product,start,file_list,dataset,LatLonBox,show=True,index=0)
     
 
 
