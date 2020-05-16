@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# Author: Justin Richling
+# Date 2020 May 16
 
 
 print("This library only plots Base Reflectivity and Radial Velocity"+"\n"+
