@@ -170,7 +170,7 @@ def query_radar_data(data_set,station,product,start,
 
     url = ds[data_set].follow().catalog_url
     rs = RadarServer(url)
-    print(f"\nStation (FTG: Denver) info: \n--------------------------\n{rs.stations[station]}\n")
+    print(f"\nStation (FTG: Denver) Info: \n--------------------------\n{rs.stations[station]}\n")
 
     query = rs.query()
     query.stations(station).time_range(start,end).variables(product)
