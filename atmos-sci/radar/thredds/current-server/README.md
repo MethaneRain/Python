@@ -26,7 +26,7 @@ NEXRAD Level III Radar for Case Study CCS039
 NEXRAD Level III Radar from IDD
 TDWR Level III Radar from IDD
 
-Start by running the query_radar_data function, then the radar_plot fucntion
+Start by running the query_radar_data() function, then the radar_plot() fucntion
 ```
 
 There is an ```example``` function that will quickly plot the most recent time avaliable for Denver (FTG) and Base Reflectivity
