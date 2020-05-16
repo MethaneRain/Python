@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# Author: Justin Richling
-# Date: 2020 April 14
+# In[ ]:
 
 
 print("This library only plots Base Reflectivity and Radial Velocity"+"\n"+
@@ -164,7 +163,7 @@ def query_radar_data(data_set,station,product,start,
     
 
     print(f"query start time:{start}")
-    print(f"query end time:{end}")
+    print(f"query end time:{end} \n")
     ds = get_radarserver_datasets('http://thredds.ucar.edu/thredds/')
     
     dataset = str(ds[3])[:22]
@@ -216,8 +215,8 @@ def get_radar_data(file_list,index=0):
     print('Date-time:', date_time_obj)
     title_time = "{0:%d %b %Y %H%MZ}".format(date_time_obj)
     file_time = "{0:%Y_%m_%d_%H%MZ}".format(date_time_obj)
-    print(title_time,file_time)
-    print(data)
+    print(f"title time:{title_time}","\n",f"filename time:{file_time} \n")
+    print(f"Full data printout: \n {data}")
     return data, title_time, file_time
 
 def get_prod_name(product):
