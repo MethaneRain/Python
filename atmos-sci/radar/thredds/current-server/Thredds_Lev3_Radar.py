@@ -379,6 +379,7 @@ def radar_plot(station,save_path,product,start,file_list,dataset,LatLonBox,show=
     file_list: list of queried files (.nids)
     dataset: shortened name of chosen THREDDS dataset
     LatLonBox: lat/lon extent around radar station
+    show: (default False) boolean for showing the plot or not
     index: file_list index number
     
     Returns
