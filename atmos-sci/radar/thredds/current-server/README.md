@@ -18,7 +18,8 @@ import Thredds_Lev3_Radar as radar
 This library only plots Base Reflectivity and Radial Velocity
 Many other products are available in the data!
 
-THREDDS avaliable dataset names:
+Avaliable THREDDS Dataset Names:
+------------------------------
 NEXRAD Level II Radar for Case Study CCS039
 NEXRAD Level II Radar from IDD
 NEXRAD Level III Radar for Case Study CCS039
