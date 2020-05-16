@@ -59,7 +59,7 @@ title time: 16 May 2020 1611Z
 filename time: 2020_05_16_1611Z 
 
 
-Full data printout: 
+Full Data Printout: 
 ---------------------------------
   https://thredds.ucar.edu/thredds/cdmremote/nexrad/level3/IDD/N0V/FTG/20200516/Level3_FTG_N0V_20200516_1611.nids
 Dimensions:
