@@ -1,15 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# Author: Justin Richling
+# Date: 2020 May 16
 
 
 print("This Notebook only plots: Base Reflectivity and Radial Velocity"+"\n"+
      "Many other products are available in the data!")
-
-
-# In[1]:
-
 
 from datetime import datetime, timedelta
 import time
@@ -33,10 +30,6 @@ from siphon.catalog import TDSCatalog
 from siphon.cdmr import Dataset
 from siphon.radarserver import get_radarserver_datasets, RadarServer
 
-
-# In[2]:
-
-
 rad_vel = pd.read_csv("/Users/chowdahead/Documents/radial_velocity_cmap.csv")
 rad_vel_colors = []
 for i in range(0,256):
@@ -48,10 +41,6 @@ for i in range(0,256):
 cmap_name="rad_vel"
 rad_vel_cmap = LinearSegmentedColormap.from_list(
             cmap_name, rad_vel_colors)
-
-
-# In[3]:
-
 
 refl = pd.read_csv("/Users/chowdahead/Documents/refl_cmap.csv")
 refl_colors = []
@@ -65,10 +54,6 @@ cmap_name="refl"
 refl_cmap = LinearSegmentedColormap.from_list(
             cmap_name, refl_colors)
 
-
-# In[4]:
-
-
 prod_dict = {"N0V":{"prod_name":"Velocity","dataset_name":"RadialVelocity_HI"},
              "N1P":{"prod_name":"Precip1hr","dataset_name":"Precip1hr"},
              "N0Q":{"prod_name":"Reflectivity","dataset_name":"BaseReflectivityDR"},
@@ -77,10 +62,6 @@ prod_dict = {"N0V":{"prod_name":"Velocity","dataset_name":"RadialVelocity_HI"},
              "N0H":{"prod_name":"HydroClass","dataset_name":"HydrometeorClassification"},
     
 }
-
-
-# In[5]:
-
 
 available_product_list = ['DAA',
  'DHR',
@@ -155,10 +136,6 @@ available_product_list = ['DAA',
  'OHA',
  'PTA']
 
-
-# In[6]:
-
-
 def query_radar_data(station,product,start,
                      minute_delta=0,hour_delta=0,day_delta=0):
     
@@ -208,10 +185,6 @@ def query_radar_data(station,product,start,
   
     return file_list,LatLonBox
 
-
-# In[7]:
-
-
 def get_radar_data(file_list,index=0):
     
     """
@@ -247,10 +220,6 @@ def get_radar_data(file_list,index=0):
     #print(data)
     return data, title_time, file_time
 
-
-# In[8]:
-
-
 def get_prod_name(product):
     
     """
@@ -273,10 +242,6 @@ def get_prod_name(product):
     thredds_product = prod_dict[product]["dataset_name"]
 
     return prod_name,thredds_product
-
-
-# In[20]:
-
 
 def get_radar_vars(data,prod_name):  
     """
@@ -314,10 +279,6 @@ def get_radar_vars(data,prod_name):
     
     return ref_var,ref_data,x,y
 
-
-# In[21]:
-
-
 def raw_to_masked_float(ref_var, ref_data):
     # Values come back signed. If the _Unsigned attribute is set, we need to convert
     # from the range [-127, 128] to [0, 255].
@@ -330,10 +291,6 @@ def raw_to_masked_float(ref_var, ref_data):
     # Convert to float using the scale and offset
     return ref_data * ref_var.scale_factor + ref_var.add_offset
 
-
-# In[22]:
-
-
 def get_product_cbar_args(prod_name,ax,cbar,outline_effect):
     if prod_name == "Reflectivity":
         ticks = np.arange(-20,80,10)
@@ -345,10 +302,6 @@ def get_product_cbar_args(prod_name,ax,cbar,outline_effect):
         
     for count,ele in enumerate(ticks,0): 
         cbar.ax.text(ele, Y, ticks[count], ha='center', va='center',path_effects=outline_effect,color="w",fontsize=6)
-
-
-# In[23]:
-
 
 def make_text_time_right(ax,end,title_time,dataset,
                          color="w",
@@ -373,10 +326,6 @@ def make_text_time_left(ax,station, prod_name,product,
     outline_effect = [patheffects.withStroke(linewidth=5, foreground='black')]
     text_time2.set_path_effects(outline_effect)
     return text_time2,ax
-
-
-# In[24]:
-
 
 def make_map(data,LatLonBox): 
     """
@@ -429,10 +378,6 @@ def make_map(data,LatLonBox):
     ax.set_extent(LatLonBox,ccrs.PlateCarree())
     
     return fig,ax,proj
-
-
-# In[35]:
-
 
 def radar_plot(station,save_path,product,start,file_list,LatLonBox,
                save=True,show=False,index=0):
@@ -511,10 +456,6 @@ def radar_plot(station,save_path,product,start,file_list,LatLonBox,
     #plt.close(fig)    
     if show == True:
         plt.show()                               
-
-
-# In[38]:
-
 
 def example():
     """
