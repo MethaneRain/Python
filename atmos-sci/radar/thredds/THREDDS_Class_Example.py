@@ -243,8 +243,6 @@ class THREDDS_Models:
  
         for arg in argv:  
             print (arg)
-            
-        
         
         # Grab all the variables that get passed for queue
         var_list = [i for i in argv]
@@ -302,12 +300,16 @@ class THREDDS_Models:
 
         # Request data for the variables you want to use
         data = ncss.get_data(query)
+        lons = data.variables["lon"][:]
+        lats = data.variables["lat"][:]
         
         print("Data grab complete!")
        
         self.arg = arg
         self.model = model
         self.title_prod = self.model_filename_prod_dict[model][prod]
+        self.lons = lons
+        self.lats = lats
         return data
 
     def get_time(self,data):
@@ -489,7 +491,7 @@ class THREDDS_Models:
                 #cs2 = ax.contourf(lons, lats, var_data, self.clevs, cmap=cmap,
                 #          transform=datacrs)
                 
-                cs2 = ax.contourf(lons, lats, var_data[time_index,level,:,:][:], self.clevs, cmap=self.cmap,
+                cs2 = ax.contourf(self.lons, self.lats, var_data[time_index,level,:,:][:], self.clevs, cmap=self.cmap,
                          transform=datacrs)
                 
                 cbaxes = fig.add_axes(colorbar_axis) # [left, bottom, width, height]
@@ -501,7 +503,7 @@ class THREDDS_Models:
                 #cs2 = ax.contourf(lons, lats, var_data, self.clevs, cmap=cmap,
                 #          transform=datacrs)
                 
-                cs2 = ax.contourf(lons, lats, var_data[time_index,:,:][:], self.clevs, cmap=self.cmap,
+                cs2 = ax.contourf(self.lons, self.lats, var_data[time_index,:,:][:], self.clevs, cmap=self.cmap,
                           transform=datacrs)
                 
                 cbaxes = fig.add_axes(colorbar_axis) # [left, bottom, width, height]
@@ -514,7 +516,7 @@ class THREDDS_Models:
                 #cs2 = ax.contour(lons, lats, var_data, self.clevs, colors=self.colors,
                 #      transform=datacrs)
                 
-                cs2 = ax.contour(lons, lats, var_data[time_index,level,:,:][:], self.clevs, colors=self.colors,cmap=self.cmap,
+                cs2 = ax.contour(self.lons, self.lats, var_data[time_index,level,:,:][:], self.clevs, colors=self.colors,cmap=self.cmap,
                       transform=datacrs)
                 plt.clabel(cs2,colors='k', **kw_clabels)
             
@@ -523,7 +525,7 @@ class THREDDS_Models:
                 #cs2 = ax.contour(lons, lats, var_data, self.clevs, colors=self.colors,
                 #      transform=datacrs)
                 
-                cs2 = ax.contour(lons, lats, var_data[time_index,:,:][:], self.clevs, colors=self.colors,cmap=self.cmap,
+                cs2 = ax.contour(self.lons, self.lats, var_data[time_index,:,:][:], self.clevs, colors=self.colors,cmap=self.cmap,
                       transform=datacrs)
                 plt.clabel(cs2,colors='k', **kw_clabels)
             
