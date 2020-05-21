@@ -188,6 +188,7 @@ class THREDDS_Models:
         cat_1 = "http://thredds-jetstream.unidata.ucar.edu/thredds/ncss/grib/NCEP/"
         cat_2 = f"{model}/{self.model_dict[model][prod]}_{self.today_year}{self.today_month:02d}{self.today_day:02d}_{self.init_hour}.grib2/dataset.html"
         catalog = cat_1+cat_2
+        print(catalog)
         webbrowser.open(catalog)
         
     
