@@ -141,7 +141,33 @@ class THREDDS_Models:
         self.colors = "k"
         
         self.cmap = "jet"
-        
+    
+    model_filename_prod_dict = {"RAP":{"13km":"CONUS_13km",
+                                   "20km":"CONUS_20km",
+                                   "40km":"CONUS_40km"},
+                            
+                            "GFS":{"0p25_ana":"Global_0p25deg_ana",
+                                    "0p25":"Global_0p25deg",
+                                    "0p5_ana":"Global_0p5deg_ana",
+                                    "0p5":"Global_0p5deg",
+                                    "onedeg_ana":"Global_onedeg_ana",
+                                    "onedeg":"Global_onedeg",
+                                    "Pac_20km":"Pacific_20km",
+                                    "PR_0p25":"Puerto_Rico_0p25deg",
+                                    "CONUS_95km":"CONUS_95km",
+                                    "CONUS_80km":"CONUS_80km",
+                                    "CONUS_20km":"CONUS_20km",
+                                    "AK_20km":"Alaska_20km"},
+                            
+                            "HRRR":{"CONUS_3km":"CONUS_3km",
+                                    "CONUS_2p5km_ana":"CONUS_2p5km_ana",
+                                    "CONUS_2p5km":"CONUS_2p5km"},
+                            
+                            "GEFS":{"onedeg_ana":"Global_1p0deg_Ensemble_ana",
+                                    "onedeg":"Global_1p0deg_Ensemble",
+                                    "onedeg_derived":"Global_1p0deg_Ensemble"}
+                           }
+    
     def change_run_time(self,year,month,day,init_hour):
         '''
         Change the queued date for data
@@ -218,31 +244,7 @@ class THREDDS_Models:
         for arg in argv:  
             print (arg)
             
-        model_filename_prod_dict = {"RAP":{"13km":"CONUS_13km",
-                                   "20km":"CONUS_20km",
-                                   "40km":"CONUS_40km"},
-                            
-                            "GFS":{"0p25_ana":"Global_0p25deg_ana",
-                                    "0p25":"Global_0p25deg",
-                                    "0p5_ana":"Global_0p5deg_ana",
-                                    "0p5":"Global_0p5deg",
-                                    "onedeg_ana":"Global_onedeg_ana",
-                                    "onedeg":"Global_onedeg",
-                                    "Pac_20km":"Pacific_20km",
-                                    "PR_0p25":"Puerto_Rico_0p25deg",
-                                    "CONUS_95km":"CONUS_95km",
-                                    "CONUS_80km":"CONUS_80km",
-                                    "CONUS_20km":"CONUS_20km",
-                                    "AK_20km":"Alaska_20km"},
-                            
-                            "HRRR":{"CONUS_3km":"CONUS_3km",
-                                    "CONUS_2p5km_ana":"CONUS_2p5km_ana",
-                                    "CONUS_2p5km":"CONUS_2p5km"},
-                            
-                            "GEFS":{"onedeg_ana":"Global_1p0deg_Ensemble_ana",
-                                    "onedeg":"Global_1p0deg_Ensemble",
-                                    "onedeg_derived":"Global_1p0deg_Ensemble"}
-                           }
+        
         
         # Grab all the variables that get passed for queue
         var_list = [i for i in argv]
@@ -305,7 +307,7 @@ class THREDDS_Models:
        
         self.arg = arg
         self.model = model
-        self.title_prod = model_filename_prod_dict[model][prod]
+        self.title_prod = self.model_filename_prod_dict[model][prod]
         return data
 
     def get_time(self,data):
