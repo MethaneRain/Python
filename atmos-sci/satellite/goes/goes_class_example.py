@@ -228,7 +228,7 @@ class GoesImages:
     
         country_borders = cfeature.NaturalEarthFeature(category='cultural',
             name='admin_0_countries',scale='50m', facecolor='none')
-        self.get_goes_projection
+        self.get_goes_projection()
         crs =self.abi_crs
     
     # Add the map and set the extent
@@ -277,6 +277,8 @@ class GoesImages:
         cbar.ax.set_position([posn.x0+0.001, posn.y0-0.001,
                                 (posn.x1-posn.x0)/2, posn.height])
         
+        self.get_product_cbar_args()
+    
         outline_effect = [patheffects.withStroke(linewidth=3, foreground='black')]
         Y = 240    
         for count,ele in enumerate(self.ticks,0): 
