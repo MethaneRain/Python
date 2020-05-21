@@ -198,7 +198,7 @@ class GoesImages:
         abi_crs = var.attrs['area'].to_cartopy_crs()
         self.abi_crs = abi_crs
     
-    def plot_goes(self,savepath,extent,my_cmap=None,vmin=None,vmax=None,show=False):
+    def plot_goes(self,GOES_file,savepath,extent,my_cmap=None,vmin=None,vmax=None,show=False):
         """
         --------------
         Plot GOES Data
@@ -206,6 +206,7 @@ class GoesImages:
         
         Args:
         -----
+        * GOES_file: GOES nc file
         * savepath: path for saved images
         * extent: plot lat/lon extent
         * my_cmap: colormap (default none)
@@ -217,6 +218,8 @@ class GoesImages:
         import cartopy.crs as ccrs
         import cartopy.feature as cfeature
         from matplotlib import patheffects
+        
+        self.get_sat_data(GOES_file)
         
     # Create new figure
         fig = plt.figure(figsize=(17,11))
