@@ -172,6 +172,11 @@ class GoesImages:
         
     def get_goes_projection(self):
         """
+        ----------------------------------------------
+        Use SatPy to grab GOES projection for plotting
+        ----------------------------------------------
+        
+        SatPy has a built-in function to get the most appropriate CRS for GOES
         
         """
         import glob
@@ -181,11 +186,8 @@ class GoesImages:
         scn = Scene(reader='abi_l1b', filenames=filename)
         product= f"C{self.ch}"
         scn.load([product])
-        
-        #if self.ch == "02":
-        #    new_scn = scn.resample()
-        #else:    
-        #    new_scn = scn.resample(resampler='native') #scn.min_area(),
+           
+        #new_scn = scn.resample(resampler='native') #scn.min_area(),
         new_scn = scn.resample(resampler='native') #scn.min_area()
         var = get_enhanced_image(new_scn[product]).data
         
@@ -201,9 +203,7 @@ class GoesImages:
         import cartopy.crs as ccrs
         import cartopy.feature as cfeature
         from matplotlib import patheffects
-    
-        #X,Y,title_time,file_time,data,proj_var,sat_h = get_sat_data(GOES_file)
-    
+        
     # Create new figure
         fig = plt.figure(figsize=(17,11))
     
@@ -230,9 +230,11 @@ class GoesImages:
             
     # Find and convert Julian day to date    
         
-    # Set the plot title    
+    # Set the plot legend
+        self.make_text_time_right(ax,self.title_time,
+                             color="w",
+                           fontsize=12)    
         
-    
     # Add state boundaries to plot
         ax.add_feature(states_boundaries, edgecolor='blue', linewidth=1)
     
@@ -247,8 +249,12 @@ class GoesImages:
         X = self.X
         Y = self.Y
         
-        im = plt.imshow(self.var_data,origin='upper',extent=(X.min(), X.max(), Y.min(), Y.max()),
-                    interpolation='nearest',vmin=vmin,vmax=vmax,cmap=my_cmap, transform=crs) 
+        im = plt.imshow(self.var_data,origin='upper',
+                        extent=(X.min(), X.max(), Y.min(), Y.max()),
+                        interpolation='nearest',
+                        vmin=vmin,vmax=vmax,
+                        cmap=my_cmap, 
+                        transform=crs) 
         
         cbar = plt.colorbar(im,orientation="horizontal") #,ticks=ticks
         self.cbar = cbar
@@ -259,14 +265,15 @@ class GoesImages:
         outline_effect = [patheffects.withStroke(linewidth=3, foreground='black')]
         Y = 240    
         for count,ele in enumerate(self.ticks,0): 
-            cbar.ax.text(ele, Y, self.ticks[count], ha='center', va='center',
-                         path_effects=outline_effect,color="w",fontsize=6)
+            cbar.ax.text(ele, Y, self.ticks[count], 
+                         ha='center', va='center',
+                         path_effects=outline_effect,
+                         color="w",
+                         fontsize=6)
         
         cbar.set_ticks([])
         cbar.ax.set_xticklabels([])
-        self.make_text_time_right(ax,self.title_time,
-                             color="w",
-                           fontsize=12)
+        
     # Display the figure
         if show == True:
             plt.show()
