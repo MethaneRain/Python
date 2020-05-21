@@ -14,6 +14,10 @@ class GoesImages:
     """
     def __init__(self):
         '''
+        --------------
+        Initial values
+        --------------
+        
         Default values
         
         * image save path -> cwd
@@ -32,6 +36,7 @@ class GoesImages:
         ------------------------------------
         Grab Julian day number from datetime
         ------------------------------------
+        Turn date time into necessary Julian day for nc file nomenclature
         
         example:
         --------
@@ -56,13 +61,24 @@ class GoesImages:
             if int(Julian_Day) < 10:
                 Julian_Day = "0"+str(Julian_Day)
     
-        
-    
-        # Julian day (Day)
-        print("Julian number:",Julian_Day)
+        print(f"Julian number: {Julian_Day}")
         self.Julian_Day = Julian_Day
 
     def grab_goes_files(self,GOES_file_path,ch):
+        """
+        -----------------------------------
+        Make list of all available nc files
+        -----------------------------------
+        
+        Args:
+        -----
+        * GOES_file_path: path to nc files
+        * ch (str): GOES channel number (must have leading zero for 1-9)
+        
+        
+        
+        """
+        
         import glob
         GOES_files = sorted([name for name in glob.glob(GOES_file_path+f'/*CMIPC*M6C{ch}*.nc')])
  
@@ -89,13 +105,13 @@ class GoesImages:
     def make_text_time_left(self,ax,station, prod_name,product,
                             color="w",
                            fontsize=12):  
-        from matplotlib import patheffects
+        #from matplotlib import patheffects
         
         text_time2 = ax.text(0.005, 0.01, 
                     "Station: "+station+"\n"+prod_name+" ("+product+")",
                     horizontalalignment='left', transform=ax.transAxes,
                     color=color, fontsize=fontsize, weight='bold',zorder=15)
-        outline_effect = [patheffects.withStroke(linewidth=5, foreground='black')]
+        outline_effect = [self.patheffects.withStroke(linewidth=5, foreground='black')]
         text_time2.set_path_effects(outline_effect)
         self.text_time2 = text_time2
         self.ax = ax
@@ -106,11 +122,11 @@ class GoesImages:
         nc = Dataset(GOES_file)
         file_data = nc.variables['CMI']
         var_data = nc.variables['CMI'][:]
-        def rebin(a, shape):
-            sh = shape[0],a.shape[0]//shape[0],shape[1],a.shape[1]//shape[1]
-            return a.reshape(sh).mean(-1).mean(1)
-        if self.ch == "02":
-            var_data = rebin(var_data, [3000, 5000])
+        #def rebin(a, shape):
+        #    sh = shape[0],a.shape[0]//shape[0],shape[1],a.shape[1]//shape[1]
+        #    return a.reshape(sh).mean(-1).mean(1)
+        #if self.ch == "02":
+        #    var_data = rebin(var_data, [3000, 5000])
             
         proj_var = nc.variables['goes_imager_projection']
         sat_h = nc.variables['goes_imager_projection'].perspective_point_height
