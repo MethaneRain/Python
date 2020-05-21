@@ -69,13 +69,11 @@ class GoesImages:
         -----------------------------------
         Make list of all available nc files
         -----------------------------------
-        
+        ** Run this before plotting method **
         Args:
         -----
         * GOES_file_path: path to nc files
         * ch (str): GOES channel number (must have leading zero for 1-9)
-        
-        
         
         """
         
@@ -230,7 +228,7 @@ class GoesImages:
     
         country_borders = cfeature.NaturalEarthFeature(category='cultural',
             name='admin_0_countries',scale='50m', facecolor='none')
-        
+        self.get_goes_projection
         crs =self.abi_crs
     
     # Add the map and set the extent
