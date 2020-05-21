@@ -373,7 +373,7 @@ class THREDDS_Models:
                               "Pressure_low_cloud_bottom_Mixed_intervals_Average"]}}
         return model_F_hr_offset
     
-    def make_map(self,var_data,time_index,lats,lons,font,
+    def make_map(self,var_data,time_index,font,
                  variable,
                  filename_var,
                  contourfill=True,
