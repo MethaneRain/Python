@@ -154,8 +154,8 @@ class GoesImages:
         self.central_lon = central_lon
         self.nc = nc
         
-        nc.close()
-        nc = None
+        #nc.close()
+        #nc = None
         
     def get_product_cbar_args(self):
         import numpy as np
