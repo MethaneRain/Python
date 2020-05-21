@@ -198,7 +198,21 @@ class GoesImages:
         abi_crs = var.attrs['area'].to_cartopy_crs()
         self.abi_crs = abi_crs
     
-    def plot_goes(self,GOES_file,savepath,extent,my_cmap=None,vmin=None,vmax=None,show=False):
+    def plot_goes(self,savepath,extent,my_cmap=None,vmin=None,vmax=None,show=False):
+        """
+        --------------
+        Plot GOES Data
+        --------------
+        
+        Args:
+        -----
+        * savepath: path for saved images
+        * extent: plot lat/lon extent
+        * my_cmap: colormap (default none)
+        * vmin: lpotting min limit (default none)
+        * vmax: plotting max limit (default none)
+        * show: show figure (default False)
+        """
         import matplotlib.pyplot as plt
         import cartopy.crs as ccrs
         import cartopy.feature as cfeature
