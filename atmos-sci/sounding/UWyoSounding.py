@@ -9,6 +9,9 @@ University of Wyoming and MetPy Soundings (non Siphon)
 """
 
 class UWyoSound:
+    """
+    University of Wyoming
+    """
     
     def __init__(self):
         '''
@@ -34,5 +37,7 @@ class UWyoSound:
         
         self.station_num = 72469
         self.station_name = "DNR"
+        
+    
         
         
