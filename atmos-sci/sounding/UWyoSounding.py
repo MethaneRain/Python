@@ -15,11 +15,9 @@ class UWyoSound:
         Default values
         
         * date -> current date
-        * initialization hour -> 0000Z
+        * launch hour -> 12
         * image save path -> cwd
-        * countour levels -> 100
-        * extent -> CONUS
-        * contour color -> black
+
         '''
         from datetime import datetime
         now = datetime.utcnow()
@@ -29,7 +27,7 @@ class UWyoSound:
         print(self.today_day,self.today_year,self.today_month)
         
         # initialization hour for model forecast
-        self.launch_hour = "12"
+        self.launch_hour = 12
         
         # current working drive for saved images
         self.im_save_path = "./"
