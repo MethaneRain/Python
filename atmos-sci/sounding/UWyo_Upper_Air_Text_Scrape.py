@@ -114,7 +114,7 @@ try:
     #loc = base+f"{year}_{month :02}_{day0}_{hour0}_{station}_upperair.txt"
 
     #base = "/Users/chowdahead/Desktop/Weather_Blog/"+str(year)+"/"+str(month)+"_"+str(day0)+"/"
-    base = "/Users/chowdahead/Jupyter/"
+    base = "./"
     date_string = str(year)+"_"+str(month)+"_"+str(day1)+"_"+str(init_hour)+"Z_"+str(station)
     print(date_string)
     loc = base+date_string+"_upperair.txt"
