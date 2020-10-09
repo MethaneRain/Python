@@ -147,3 +147,17 @@ array([datetime.datetime(2019, 1, 1, 12, 0),
 ```
 
 Awesome! Now we can see we have a month's worth of daily time steps at 12Z for January 2019.
+
+---
+
+```
+import datetime
+
+now = datetime.utcnow()
+    datetime.datetime(2020, 10, 9, 15, 25, 32, 574155)
+    
+now.strftime('%d')
+    '09'
+```
+
+
