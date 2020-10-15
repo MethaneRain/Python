@@ -162,16 +162,19 @@ now.strftime('%d')
 
 ---
 
-Getting Julian Day Number from datetime object
+<h3>Getting Day Number from datetime object</h3>
+
+Use ```datetime.datetime.timetuple``` method to extract parsed time information including day number of year
 
 ```python
 from datetime import datetime
 dt = datetime.utcnow()
+dt
 
 >>> datetime.datetime(2020, 10, 15, 20, 53, 54, 246555)
 
-tt = dt.timetuple()
-tt.tm_yday
+time_tuple = dt.timetuple()
+time_tuple.tm_yday
 
 >>> 289
 
