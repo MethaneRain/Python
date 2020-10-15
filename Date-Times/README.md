@@ -149,8 +149,10 @@ array([datetime.datetime(2019, 1, 1, 12, 0),
 Awesome! Now we can see we have a month's worth of daily time steps at 12Z for January 2019.
 
 ---
+
 <h3>Get Day and Month Strings with Leading Zero</h3>
 Datetime has a way of formatting date strings
+
 ```
 import datetime
 
