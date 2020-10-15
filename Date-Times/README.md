@@ -178,7 +178,7 @@ dt
 
 time_tuple = dt.timetuple()
 time_tuple.tm_yday
->>>289
+>>> 289
 
 
 ```
