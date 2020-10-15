@@ -160,4 +160,24 @@ now.strftime('%d')
     '09'
 ```
 
+---
+
+Getting Julian Day Number from datetime object
+
+```python
+from datetime import datetime
+dt = datetime.utcnow()
+
+>>> datetime.datetime(2020, 10, 15, 20, 53, 54, 246555)
+
+tt = dt.timetuple()
+tt.tm_yday
+
+>>> 289
+
+
+```
+
+---
+
 
