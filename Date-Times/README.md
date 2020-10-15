@@ -153,7 +153,7 @@ Awesome! Now we can see we have a month's worth of daily time steps at 12Z for J
 <h3>Get Day and Month Strings with Leading Zero</h3>
 Datetime has a way of formatting date strings
 
-```
+```python
 import datetime
 
 now = datetime.utcnow()
