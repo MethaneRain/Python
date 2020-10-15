@@ -157,10 +157,11 @@ Datetime has a way of formatting date strings
 import datetime
 
 now = datetime.datetime.utcnow()
-    datetime.datetime(2020, 10, 9, 15, 25, 32, 574155)
+now
+>>> datetime.datetime(2020, 10, 9, 15, 25, 32, 574155)
     
 now.strftime('%d')
-    '09'
+>>> '09'
 ```
 
 ---
@@ -172,11 +173,12 @@ Use ```datetime.datetime.timetuple``` method to extract parsed time information 
 ```python
 from datetime import datetime
 dt = datetime.utcnow()
-    datetime.datetime(2020, 10, 15, 20, 53, 54, 246555)
+dt
+>>> datetime.datetime(2020, 10, 15, 20, 53, 54, 246555)
 
 time_tuple = dt.timetuple()
 time_tuple.tm_yday
-    289
+>>>289
 
 
 ```
