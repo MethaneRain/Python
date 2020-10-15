@@ -149,7 +149,8 @@ array([datetime.datetime(2019, 1, 1, 12, 0),
 Awesome! Now we can see we have a month's worth of daily time steps at 12Z for January 2019.
 
 ---
-
+<h3>Get Day and Month Strings with Leading Zero</h3>
+Datetime has a way of formatting date strings
 ```
 import datetime
 
@@ -162,7 +163,7 @@ now.strftime('%d')
 
 ---
 
-<h3>Getting Day Number from datetime object</h3>
+<h3>Getting Day Number from Datetime Object</h3>
 
 Use ```datetime.datetime.timetuple``` method to extract parsed time information including day number of year
 
