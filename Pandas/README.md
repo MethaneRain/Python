@@ -30,6 +30,28 @@ df = pd.DataFrame({'name': "COLD",
 ```
 
 Add more data to the existing dataframe
+* add single new row that has to match the column dimensions of original dataframe
+```python
+to_append = ["WARM",lat,lon]
+to_series = pd.Series(to_append, index = df.columns)
+df = df.append(to_series, ignore_index=True)
+print(df)
+
+>>>
+	name	latitude	longitude
+0	COLD	57.5	-58.9
+1	COLD	56.3	-58.1
+2	COLD	54.5	-58.5
+3	COLD	53.1	-59.5
+4	COLD	50.8	-61.5
+5	COLD	47.6	-63.5
+6	COLD	44.9	-66.6
+7	COLD	41.4	-70.7
+8	COLD	39.1	-73.4
+9	WARM	57.5	-58.9
+```
+Make a function to loop over all new entries added if more than one at a time
+
 ```python
 def add_latlon_to_df(df,lats,lons):
     """Add existing set of lat/lon pairs from specific front (Hi/Lo) 
