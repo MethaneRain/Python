@@ -130,7 +130,8 @@ plt.savefig("Radar_+Time[0:10].replace("-","_")+"_"+Time[-6:].replace(":","")+".
 plt.close(fig)
 ```
 
-<img src="https://raw.githubusercontent.com/MethaneRain/Python/master/Jupyter-Notebooks/Weather-Notebooks/Radar/Thredds/Radar_2019_04_12_0000Z.png">
+<img src="https://github.com/MethaneRain/Weather-Jupyter-Notebooks/blob/master/Radar/Thredds/Radar_2019_04_12_0000Z.png">
+
 
 # Fixed!
 
@@ -140,9 +141,9 @@ I was able to plot the Radar successfully by using the `pcolormesh` call instead
 ax.pcolormesh(lon[:], lat[:], reflec[0,:,:],cmap='nipy_spectral',transform=ccrs.PlateCarree())
 ```
 
-<img src='https://raw.githubusercontent.com/MethaneRain/Python/master/Jupyter-Notebooks/Weather-Notebooks/Radar/Thredds/Radar_CONUS_2019_04_12_0000Z.png'>
+<img src='https://github.com/MethaneRain/Weather-Jupyter-Notebooks/blob/master/Radar/Thredds/Radar_CONUS_2019_04_12_0000Z.png'>
 
 
 # Accessing the Level III Radar
 ## * Base Reflectivity and Velocity
-<img src="https://raw.githubusercontent.com/MethaneRain/Python/master/Jupyter-Notebooks/Weather-Notebooks/Radar/Thredds/Denver_Radar_Reflectivity_thredds_2019_05_27_1935Z.png">,<img src="https://raw.githubusercontent.com/MethaneRain/Python/master/Jupyter-Notebooks/Weather-Notebooks/Radar/Thredds/Denver_Radar_Velocity_thredds_2019_05_27_1935Z.png">
+<img src="https://github.com/MethaneRain/Weather-Jupyter-Notebooks/blob/master/Radar/Thredds/Denver_Radar_Reflectivity_thredds_2019_05_27_1935Z.png">,<img src="https://github.com/MethaneRain/Weather-Jupyter-Notebooks/blob/master/Radar/Thredds/Denver_Radar_Velocity_thredds_2019_05_27_1935Z.png">

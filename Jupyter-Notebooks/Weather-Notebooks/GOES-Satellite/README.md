@@ -17,19 +17,19 @@ Take a look at the notebook here: https://github.com/MethaneRain/Python-Jupyter/
 With setup instructions here: https://github.com/blaylockbk/pyBKB_v3/blob/master/rclone_howto.md
 
 ## Colorado Bomb Cyclone 2-day setup in WV
-![wv_CO_bomb](https://raw.githubusercontent.com/MethaneRain/Python/master/Jupyter-Notebooks/Weather-Notebooks/GOES-Satellite/Sample%20Maps/WV.gif)
+![wv_CO_bomb](https://github.com/MethaneRain/Weather-Jupyter-Notebooks/blob/master/GOES%20Satellite%20Maps/Sample%20Maps/WV.gif)
 
 ## Sweet Frontal Boundary Over the Pacific
-![alt text](https://raw.githubusercontent.com/MethaneRain/Python/master/Jupyter-Notebooks/Weather-Notebooks/GOES-Satellite/Sample%20Maps/GOES17_TrueColor_Jan16_2019.gif)
+![alt text](https://github.com/MethaneRain/Weather-Jupyter-Notebooks/blob/master/GOES%20Satellite%20Maps/Sample%20Maps/GOES17_TrueColor_Jan16_2019.gif)
 
 ## 2017 Total Solar Eclipse!!
-![CONUS Solar Eclipse](https://raw.githubusercontent.com/MethaneRain/Python/master/Jupyter-Notebooks/Weather-Notebooks/GOES-Satellite/Sample%20Maps/2017_Eclipse.gif)
+![CONUS Solar Eclipse](https://github.com/MethaneRain/Weather-Jupyter-Notebooks/blob/master/GOES%20Satellite%20Maps/Sample%20Maps/2017_Eclipse.gif)
 
 ## GLM Over Texas
-![GLM Texas](https://raw.githubusercontent.com/MethaneRain/Python/master/Jupyter-Notebooks/Weather-Notebooks/GOES-Satellite/Sample%20Maps/GOES_GLM_20181226.gif)
+![GLM Texas](https://github.com/MethaneRain/Weather-Jupyter-Notebooks/blob/master/GOES%20Satellite%20Maps/Sample%20Maps/GOES_GLM_20181226.gif)
 
 ## Cyclone over Northeast
-![](https://raw.githubusercontent.com/MethaneRain/Python/master/Jupyter-Notebooks/Weather-Notebooks/GOES-Satellite/Sample%20Maps/Resized_GOES_Ch13_IR_2018_004_15_30.png)
+![](https://github.com/MethaneRain/Weather-Jupyter-Notebooks/blob/master/GOES%20Satellite%20Maps/Sample%20Maps/Resized_GOES_Ch13_IR_2018_004_15_30.png)
 
 ## Combining station plots with GOES satellite images
 ### MetPy station plot notebook customized with parts from my GOES notebook 
@@ -40,15 +40,15 @@ With setup instructions here: https://github.com/blaylockbk/pyBKB_v3/blob/master
 ## A quick plot of both GOES east and west as a mosiac
 ### Obviously this is not the best mosiac approach. The east plot is plotted over the west, so it is clear that the western part of GOES east is different from what GOES west would have plotted. I believe the next step I will try is to plot east to longitude -100 and same for the west...
 
-![GOES Mosiac](https://raw.githubusercontent.com/MethaneRain/Python/master/Jupyter-Notebooks/Weather-Notebooks/GOES-Satellite/Sample%20Maps/GOES16_17_Mosiac.png)
+![GOES Mosiac](https://github.com/MethaneRain/Weather-Jupyter-Notebooks/blob/master/GOES%20Satellite%20Maps/Sample%20Maps/GOES16_17_Mosiac.png)
 
 * Better Mosiac (limiting plotting from datasets)
-![GOES Mosiac](https://raw.githubusercontent.com/MethaneRain/Python/master/Jupyter-Notebooks/Weather-Notebooks/GOES-Satellite/Sample%20Maps/GOES_Mosiac_2019_05_23_0601.png)
+![GOES Mosiac](https://github.com/MethaneRain/Weather-Jupyter-Notebooks/blob/master/GOES%20Satellite%20Maps/Sample%20Maps/GOES_Mosiac_2019_05_23_0601.png)
 
 ## Colorado Bomb
-![](https://raw.githubusercontent.com/MethaneRain/Python/master/Jupyter-Notebooks/Weather-Notebooks/GOES-Satellite/Sample%20Maps/GOES16_Ch13_2019_03_13_1902.png)
+![](https://github.com/MethaneRain/Weather-Jupyter-Notebooks/blob/master/GOES%20Satellite%20Maps/Sample%20Maps/GOES16_Ch13_2019_03_13_1902.png)
 
 ## Mid-Level Water Vapor
 * Black and White                                                              Colored
 
-<img src="https://raw.githubusercontent.com/MethaneRain/Python/master/Jupyter-Notebooks/Weather-Notebooks/GOES-Satellite/Sample%20Maps/GOES_Ch9_WV_2018_356_12_02.png" width="50%"><img src="https://raw.githubusercontent.com/MethaneRain/Python/master/Jupyter-Notebooks/Weather-Notebooks/GOES-Satellite/Sample%20Maps/GOES_Ch9_WV_2018_356_12_02_colored.png" width="50%">
+<img src="https://github.com/MethaneRain/Weather-Jupyter-Notebooks/blob/master/GOES%20Satellite%20Maps/Sample%20Maps/GOES_Ch9_WV_2018_356_12_02.png" width="50%"><img src="https://github.com/MethaneRain/Weather-Jupyter-Notebooks/blob/master/GOES%20Satellite%20Maps/Sample%20Maps/GOES_Ch9_WV_2018_356_12_02_colored.png" width="50%">

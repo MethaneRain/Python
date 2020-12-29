@@ -101,4 +101,4 @@ print(Meta['SATELLITE'][0:4])
 ```
 
 ### Plotting the FAPAR product over Spain
-<img src="https://raw.githubusercontent.com/MethaneRain/Python/master/Jupyter-Notebooks/HDF-Examples/LandSaf_FAPAR_20181101_Spain.png">
+<img src="https://github.com/MethaneRain/Weather-Jupyter-Notebooks/blob/master/HDF-Examples/LandSaf_FAPAR_20181101_Spain.png">
