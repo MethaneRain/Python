@@ -3,7 +3,7 @@
 """
 Created on Wed Apr  8 00:11:32 2020
 
-@author: chowdahead
+@author: Justin Richling
 """
 
                             # Test new netcdf file
