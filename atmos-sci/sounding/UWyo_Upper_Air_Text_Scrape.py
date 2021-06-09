@@ -146,4 +146,4 @@ except:
     print("Bad gateway, file not created :(")
     
 #os.system("chmod +x UWyo_UpperAir_striplines.sh")
-os.system("./UWyo_UpperAir_striplines.sh " +str(year)+"_"+str(month)+"_"+str(day1)+"_"+str(init_hour)+"Z_"+str(station))
+#os.system("./UWyo_UpperAir_striplines.sh " +str(year)+"_"+str(month)+"_"+str(day1)+"_"+str(init_hour)+"Z_"+str(station))
